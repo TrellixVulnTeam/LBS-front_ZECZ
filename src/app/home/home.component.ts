@@ -10,19 +10,13 @@ export class Details {
     public stud_no: string,
     public stu_name: string,
     public stud_surname: string,
-  ) {
-  }
-}
-
-//
-export class Lecturers {
-  constructor(
     public lec_id: string,
     public lec_name: string,
     public lec_surname: string,
   ) {
   }
 }
+
 
 
 
@@ -40,25 +34,19 @@ export class HomeComponent implements OnInit {
 
 
   //student detail array
-  student: Details[];
-  //Lecturer array
-  lecture: Lecturers[];
+  detail: Details[];
 
   ngOnInit(): void { 
     
     this.tittle = localStorage.getItem("token");
     this.getDetails();
-    this.getLecturers();
   }
 
   //get function that receive the student results from the database
   getDetails(){
-    this.student = JSON.parse(this.tittle);
+    this.detail = JSON.parse(this.tittle);
   }
-  //get function that receive the lecturer results from the database
-  getLecturers(){
-    this.lecture = JSON.parse(this.tittle);
-  }
+  
   
 //On click function for logout
   onClick()

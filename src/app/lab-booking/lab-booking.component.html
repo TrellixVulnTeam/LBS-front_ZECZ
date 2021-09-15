@@ -16,6 +16,7 @@
       <th>Lab ID</th>&nbsp;
       <th>Lab Name</th>&nbsp;
       <th>Lab Slot</th>&nbsp;
+      <th>Time</th>&nbsp;
       <th>Status</th>&nbsp;
       <th>Description</th>&nbsp;
     </tr>
@@ -33,8 +34,9 @@
       </span></td>&nbsp;
       <td><span>{{labs.Lab_Name}}</span></td>&nbsp;
       <td><span>{{labs.Lab_Slot}}</span></td>&nbsp;
+      <td><span>{{labs.time}}</span></td>&nbsp;
       <td><span>Available</span></td>&nbsp;
-      <td><span></span></td>&nbsp;
+      <td><span>{{labs.desc}}</span></td>&nbsp;
       
     </tr>
     </tbody>
@@ -44,9 +46,9 @@
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
    
   <label for="name" >Student Number </label><br>
-  <input *ngFor="let students of student" type="text" name="stuNumber" ngModel ="{{students.stud_no}}"  required><br><br>
+  <input *ngFor="let students of student" type="text" name="stuNumber" ngModel ="{{students.stud_no}}" [readonly] = "disableSelect" required><br><br>
   <label for="email" >Email </label><br>
-  <input *ngFor="let students of student" type="email" name="email" ngModel ="{{students.email}}"  required><br><br>
+  <input *ngFor="let students of student" type="email" name="email" ngModel ="{{students.email}}" [readonly] = "disableSelect" required><br><br>
 
   
   <div class = "container">

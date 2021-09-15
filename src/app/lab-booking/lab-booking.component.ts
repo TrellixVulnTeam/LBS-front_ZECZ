@@ -16,6 +16,8 @@ export class Labs {
   constructor(
     public Lab_Name: string,
     public Lab_Slot: string,
+    public time: string,
+    public desc: string,
 
    
   ) {
@@ -58,6 +60,9 @@ export class LabBookingComponent implements OnInit {
   student:students[];
   //variable that holds student Number
   studentNo;
+
+  //disable form input fields
+  disableSelect = true;
 
   selected:string = ""
 

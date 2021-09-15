@@ -8,14 +8,17 @@
     <a target="target" routerLink="/profile" routerLinkActive="active">Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <button type="button" (click)="onClick()">Logout</button>
   </nav>
- 
+ <label *ngFor="let bookings of booking">
+  <span>Number of Bookings: {{bookings.Num_Bookings}}</span>&nbsp;
+ </label>
+  
+
   <table class="table">
     <thead>
     <tr>
       <th>Booking ID</th>&nbsp;
       <th>Lab Name</th>&nbsp;
       <th>Lab Slot</th>&nbsp;
-      <th>Number of Bookings</th>&nbsp;
       <th>Student Number</th>&nbsp;
       <th>Date</th>&nbsp;   
       
@@ -26,9 +29,9 @@
       <td><span>{{bookings.Booking_ID}}</span></td>&nbsp;
       <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
       <td><span>{{bookings.Lab_Slot}}</span></td>&nbsp;
-      <td><span>{{bookings.Num_Bookings}}</span></td>&nbsp;
       <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
       <td><span>{{bookings.date}}</span></td>&nbsp;
+      <td><button type="button" (click)="onDelete()">Delete</button></td>
       <td><span></span></td>&nbsp;
       
     </tr>

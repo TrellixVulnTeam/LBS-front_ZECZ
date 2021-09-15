@@ -1,11 +1,8 @@
 <header>
     <h1>Welcome to Lab Booking system</h1>
     
-        <div *ngFor="let details of student">
-          <h3>{{this.details.stu_name}}&nbsp;&nbsp;{{this.details.stud_surname}}</h3> 
-        </div>
-        <div *ngFor="let lecturers of lecture">
-          <h3>{{this.lecturers.lec_id}}&nbsp;&nbsp;{{this.lecturers.lec_name}}</h3> 
+        <div *ngFor="let details of detail">
+          <h3>{{this.details.stu_name}}{{this.details.lec_name}}&nbsp;&nbsp;{{this.details.stud_surname}}{{this.details.lec_surname}}</h3> 
         </div>
         <br>
         

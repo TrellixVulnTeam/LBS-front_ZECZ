@@ -51,34 +51,42 @@ export class BookingDetailsComponent implements OnInit {
     this.getDetails();
   }
 
-//get Detail funtion that store the data from local storage to the detail array
-//and connects to booking API
-getDetails(){
-  this.detail = JSON.parse(this.tittle);
-    this.stuNumber = JSON.parse(this.detail[0].stud_no);
-    console.log(this.stuNumber);
-     
-}
+    //get Detail funtion that store the data from local storage to the detail array
+    //and connects to booking API
+    getDetails(){
+      this.detail = JSON.parse(this.tittle);
+        this.stuNumber = JSON.parse(this.detail[0].stud_no);
+        console.log(this.stuNumber);
+        
+    }
 
-//on submit function that calls the booking detail API
-onSubmit(data){
-  //Retrieve information from the database
-  this.http.post('http://localhost:3000/bookingStatus',data,{responseType:'text'})
-  .subscribe((result) =>{
-    this.booking = JSON.parse(result);
-    console.warn("Results", result);
-    //this.booking = result;
-  });
-  console.warn(data);
-}
+    onDelete(){    
+      this.http.delete('http://localhost:3000/DeleteStudent')
+      .subscribe(results => {
+        this.ngOnInit();
+      console.log(results);
+      })
+    }
+
+    //on submit function that calls the booking detail API
+    onSubmit(data){
+      //Retrieve information from the database
+      this.http.post('http://localhost:3000/bookingStatus',data,{responseType:'text'})
+      .subscribe((result) =>{
+        this.booking = JSON.parse(result);
+        console.warn("Results", result);
+        //this.booking = result;
+      });
+      console.warn(data);
+    }
 
 
-//On click function for logout
-  onClick()
-  {
-    
-    localStorage.removeItem("token");
-    this.router.navigate(['/index']);
-  }
+    //On click function for logout
+      onClick()
+      {
+        
+        localStorage.removeItem("token");
+        this.router.navigate(['/index']);
+      }
 
 }

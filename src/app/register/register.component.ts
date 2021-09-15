@@ -91,6 +91,15 @@ export class RegisterComponent {
             })
             console.warn(data);
         }
+        //check if the radio button is clicked
+        if(this.answer == "")
+        {
+          Swal.fire(
+            'Please select Radio Button',
+            '',
+            'error'
+          )
+        }
         
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
