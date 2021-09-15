@@ -45,6 +45,8 @@ export class BookingDetailsComponent implements OnInit {
  detail: Details[];
  //variable to store the student Number
  stuNumber: number;
+ //variable that store the number of booking
+ Num_Bookings: string;
 
   ngOnInit(): void {
     this.tittle = localStorage.getItem("token");
@@ -61,7 +63,7 @@ export class BookingDetailsComponent implements OnInit {
     }
 
     onDelete(){    
-      this.http.delete('http://localhost:3000/DeleteStudent')
+      this.http.delete('http://localhost:3000/cancelBooking')
       .subscribe(results => {
         this.ngOnInit();
       console.log(results);
@@ -76,6 +78,13 @@ export class BookingDetailsComponent implements OnInit {
         this.booking = JSON.parse(result);
         console.warn("Results", result);
         //this.booking = result;
+      });
+      //API for number of bookings
+      this.http.post('http://localhost:3000/bookingsNum',data,{responseType:'text'})
+      .subscribe((result) =>{
+        //this.Num_Bookings = JSON.stringify(result);
+        this.Num_Bookings = result;
+        console.log(this.Num_Bookings);
       });
       console.warn(data);
     }

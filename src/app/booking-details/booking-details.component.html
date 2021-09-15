@@ -8,8 +8,8 @@
     <a target="target" routerLink="/profile" routerLinkActive="active">Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <button type="button" (click)="onClick()">Logout</button>
   </nav>
- <label *ngFor="let bookings of booking">
-  <span>Number of Bookings: {{bookings.Num_Bookings}}</span>&nbsp;
+ <label>
+  <span>Number of Bookings: {{this.Num_Bookings}}</span>&nbsp;
  </label>
   
 
@@ -30,7 +30,7 @@
       <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
       <td><span>{{bookings.Lab_Slot}}</span></td>&nbsp;
       <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
-      <td><span>{{bookings.date}}</span></td>&nbsp;
+      <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
       <td><button type="button" (click)="onDelete()">Delete</button></td>
       <td><span></span></td>&nbsp;
       
