@@ -20,6 +20,7 @@ import { BookingDetailsComponent } from './booking-details/booking-details.compo
 import { ViewUserComponent } from './view-user/view-user.component';
 import { AdminComponent } from './admin/admin.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { ViewBookingsComponent } from './view-bookings/view-bookings.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
     ViewUserComponent,
     AdminComponent,
     ScheduleComponent,
+    ViewBookingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,11 +52,11 @@ import { ScheduleComponent } from './schedule/schedule.component';
       {path: 'profile', component: ProfileComponent},
       {path: 'booking-details', component: BookingDetailsComponent},
       {path: 'view-user', component: ViewUserComponent},
-
       {path: 'admin',component:  AdminComponent},
       {path: 'schedule', component: ScheduleComponent },
       {path: 'admin', component: AdminComponent},
       {path: 'schedule', component: ScheduleComponent},
+      {path: 'view-bookings', component: ViewBookingsComponent},
 
       {path: '', redirectTo: '/index', pathMatch: 'full'},
     ]),
