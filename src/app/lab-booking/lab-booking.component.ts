@@ -17,7 +17,7 @@ export class Labs {
     public Lab_Name: string,
     public Lab_Slot: string,
     public time: string,
-    public desc: string,
+    public descr: string,
 
    
   ) {
