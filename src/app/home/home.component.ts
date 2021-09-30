@@ -55,4 +55,26 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem("token");
     this.router.navigate(['/index']);
   }
+
+  //Image slider
+  imageObject: Array<object> = [{
+    image: '/assets/images/TUT Gencor.jpg',
+    thumbImage: '/assets/images/TUT Gencor.jpg',
+
+  },
+  {
+    image: 'assets/images/lab1.JPG',
+    thumbImage:'assets/images/lab1.JPG',
+    text:'',
+  },
+
+  {
+    image: 'assets/images/TUT Parking.jpg',
+    thumbImage: 'assets/images/TUT Parking.jpg',
+  },
+  {
+    image: 'assets/images/lab2.JPG',
+    thumbImage:'assets/images/lab2.JPG',
+  }
+  ]
 }
