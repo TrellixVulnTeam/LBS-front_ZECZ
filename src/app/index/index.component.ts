@@ -23,24 +23,29 @@ export class IndexComponent implements OnInit {
   }
   //image slider
   imageObject: Array<object> = [{
-    image: '/assets/images/TUT Gencor.jpg',
-    thumbImage: '/assets/images/TUT Gencor.jpg',
-
-  },
-  {
-    image: 'assets/images/lab1.JPG',
-    thumbImage:'assets/images/lab1.JPG',
-    text:'',
-  },
-
-  {
-    image: 'assets/images/TUT Parking.jpg',
-    thumbImage: 'assets/images/TUT Parking.jpg',
-  },
-  {
-    image: 'assets/images/lab2.JPG',
-    thumbImage:'assets/images/lab2.JPG',
-  }
+      thumbImage: 'assets/images/LBS6.jpg',
+      text:'Lab booking system group'
+    },
+    {
+      thumbImage:'assets/images/LBS1.jpg',
+      text:'Lab booking system group'
+    },
+    {
+      thumbImage: 'assets/images/LBS2.jpg',
+      text:'Lab booking system group'
+    },
+    {
+      thumbImage: 'assets/images/LBS4.jpg',
+      text:'Lab booking system group'
+    },
+    {
+      thumbImage: 'assets/images/LBS3.jpg',
+      text:'Lab booking system group'
+    },
+    {
+      thumbImage: 'assets/images/LBS5.jpg',
+      text:'Lab booking system group'
+    },
   ]
 
 }
