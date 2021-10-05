@@ -1,11 +1,112 @@
-<header>
-  <h1>Lab Booking system</h1>
+<style>
+  
+  h1 img{
+     background-repeat: no-repeat;
+     float: left;
+     position: inherit;
+     display: grid;
+     margin-top: 15px;
+     padding-right: 0px;
+     padding-left: 10px;
+     filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+     text-shadow: 2px 2px 4px #fbfbfb;
+   }
+   h1{
+     line-height: 400%;
+     background-color: black;
+     font-family: 'Arial Narrow Bold', sans-serif;
+     font-weight: 100px;
+     color: white;
+   }
+  
+  h1 nav{
+     float: right;
+     margin-top: 0px;
+     color: grey;
+     font-size: 18px;
+     list-style: none;
+   }
+   h2{
+     text-align: center;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 30px;
+     color: rgb(236, 146, 146);
+     margin-top: 140px;
+   }
+   h4{
+     font-family: "Roboto", sans-serif;
+     text-align: center;
+     margin-left: 500px;
+     margin-top: 0px;
+   }
+   .covid{
+     text-align: center;
+   }
+   .about{
+     text-align: center;
+     margin-bottom: 0px;
+   }
+   a{
+     color: white;
+     text-decoration: none;
+     padding: 5px 25px;
+     font-family: "Roboto", sans-serif;
+ 
+   }
+   nav a:hover{
+     border: 1px solid white;
+     color: red;
+   }
+   nav a:active{
+     border: 1px solid white;
+   }
+   #footer{
+    background-color: grey;
+     background-size: cover;
+   }
+   #register_btn{
+    font-family: monospace;
+     border-radius: 15px;
+     padding: 8px 15px 8px 15px;
+     color: black;
+     background-color: white;
+   }
+   #register_btn:hover{
+     background-color: black;
+     color: white;
+   }
+   form{
+     border-top: 1px;
+     border-style: solid grey 0.5px;
+   }
+   form label{
+     color: black;
+     font-family: fantasy;
+   }
+   form input{
+     border-bottom: 2px solid black;
+     border-radius: 12px;
+     padding: 5px;
+   }
+ </style>
+
+
+
+
+
+<header>  
+  <h1><img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
+   Lab Booking system
+     <nav>
+       <a target="target" routerLink="/login" routerLinkActive="active">Already have an Account? Login here</a>&nbsp;&nbsp;
+   </nav>
+ </h1>
 </header>
 <h2 style="text-align:center">Registration</h2>
     <br>
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
-      <input type="radio" [(ngModel)]="answer" value="student" name="student" required>Student 
-      <input type="radio" [(ngModel)]="answer" value="lecturer" name="student" required>Lecturer
+      <input type="radio" [(ngModel)]="answer" value="student" name="student" required><label>Student </label> 
+      <input type="radio" [(ngModel)]="answer" value="lecturer" name="student" required><label>Lecturer</label>
       <br><br>
         <label for="name">Name</label><br>
        <input type="text" name="name" ngModel placeholder="Name" required><br><br>
@@ -20,28 +121,26 @@
        <label for="confirm">Confirm Password</label><br>
        <input type="text" name="confirm" ngModel placeholder="Confirm Password" required><br><br>
     
-        <br><br><button type="submit">register</button>
-        <br><br>
-        <a target="login" routerLink="/login" routerLinkActive="active">Already have an Acc? Login here</a>
+        <br><br><button id="register_btn" type="submit">register</button>
         
       </form>
-
-
-
 <br>
 
-<div id ="footer">
-  <footer>
-    <a class="contact" href="">contact Us</a><br><br>
-    <a class="about" href="">About</a>
-          <div class="footer-widget social-widget">
-              <h4>Follow Us</h4>
-              <ul class="social-icons">
-                  <li><a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a></li>
-                  <li><a class="twitter" href="https://twitter.com/official_tut">Twitter</a></li>
-                  <li><a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a></li>
-              </ul>
-          </div>
-           <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80" src="/assets/images/SACoronavirus.png"></a>
-  </footer>
-</div>
+<div id="footer">
+    <footer>
+      <br>
+      <div class="about">
+        <a class="contact" href="">contact Us</a><br><br>
+        <a class="about" href="">About</a>
+      </div> 
+          <h4>Follow Us<br><br>
+            <a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a><br><br>
+            <a class="twitter" href="https://twitter.com/official_tut">Twitter</a><br><br>
+            <a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a><br><br>
+        </h4>
+        <div class="covid">
+          <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80"
+            src="/assets/images/SACoronavirus.png"></a>
+        </div>
+    </footer>
+  </div>

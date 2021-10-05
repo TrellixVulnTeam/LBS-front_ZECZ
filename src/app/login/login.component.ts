@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
 
      //sweet Alerts pop up messages
      Swal.fire({
-      title: 'Login Details',
-      text: 'Save Your Password?',
+      title: 'Are your credentials correct?',
+      text: '',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'YES',
