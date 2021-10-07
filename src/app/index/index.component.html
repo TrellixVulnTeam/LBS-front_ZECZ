@@ -1,5 +1,104 @@
-<header>
-  <h1>Lab Booking system</h1>
+<style>
+  
+  h1 img{
+     background-repeat: no-repeat;
+     float: left;
+     position: inherit;
+     display: grid;
+     margin-top: 15px;
+     padding-right: 0px;
+     padding-left: 10px;
+     filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+     text-shadow: 2px 2px 4px #fbfbfb;
+   }
+   h1{
+     line-height: 400%;
+     background-color: black;
+     font-family: 'Arial Narrow Bold', sans-serif;
+     font-weight: 100px;
+     color: white;
+   }
+  
+  h1 nav{
+     float: right;
+     margin-top: 0px;
+     color: grey;
+     font-size: 18px;
+     list-style: none;
+   }
+   h4{
+     font-family: "Roboto", sans-serif;
+     text-align: center;
+     margin-left: 500px;
+     margin-top: 0px;
+   }
+   .covid{
+     text-align: center;
+   }
+   .about{
+     text-align: center;
+     margin-bottom: 0px;
+   }
+   a{
+     color: white;
+     text-decoration: none;
+     padding: 5px 20px;
+     font-family: "Roboto", sans-serif;
+ 
+   }
+   nav a:hover{
+     border: 1px solid white;
+     color: red;
+   }
+   nav a:active{
+     border: 1px solid white;
+   }
+   #footer{
+    background-color: grey;
+     background-size: cover;
+   }
+   #btn{
+     font-family: "Roboto", sans-serif;
+     border-radius: 15px;
+     padding: 5px 7px 5px 7px;
+     color: orangered;
+     background-color: white;
+   }
+   #btn:hover{
+     background-color: black;
+     color: white;
+   }
+   #learnMore{
+     color: blue;
+   }
+   #login_btn{
+     font-size: 20px;
+    font-family: monospace;
+     border-radius: 15px;
+     padding: 8px 15px 8px 15px;
+     color: black;
+     background-color: white;
+   }
+   #login_btn:hover{
+     background-color: black;
+     color: white;
+   }
+   p{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     margin-left: 350px;
+     margin-right: 350px;
+   }
+ </style>
+
+
+
+<header>  
+  <h1><img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
+   Lab Booking system
+     <nav>
+       <a target="target" routerLink="/register" routerLinkActive="active">Register / Create Account</a>&nbsp;&nbsp;
+   </nav>
+ </h1>
 </header>
 <div class="slider" id="img-slider">
   <ng-image-slider [images]="imageObject" [infinite]="true" [autoSlide]="3" [showArrow]="false" [imagePopup]="false"
@@ -23,9 +122,9 @@
 
 
   <div style="text-align: center;">
-    <a href="https://ictsapps.uct.ac.za/lab_system/">Learn More</a>
+    <a id="learnMore" href="https://ictsapps.uct.ac.za/lab_system/">Learn More</a>
     <br><br><br><br>
-    <button type="button" (click)="onClick()">Login</button><br><br>
+    <button id="login_btn" type="button" (click)="onClick()">Login</button><br><br>
 
     <a class="button" routerLink="/register" routerLinkActive="Activebutton">Register / Create an Account</a>
 
@@ -34,23 +133,22 @@
 
 </main>
 
-<br>
+<br><br><br><br>
 <div id="footer">
   <footer>
-    <nav>
+    <br>
+    <div class="about">
       <a class="contact" href="">contact Us</a><br><br>
       <a class="about" href="">About</a>
-      <div class="footer-widget social-widget">
-        <h4>Follow Us</h4>
-        <ul class="social-icons">
-          <li><a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a></li>
-          <li><a class="twitter" href="https://twitter.com/official_tut">Twitter</a></li>
-          <li><a class="youtube"
-              href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a></li>
-        </ul>
-      </div>
-      <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80"
+    </div> 
+        <h4>Follow Us<br><br>
+          <a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a><br><br>
+          <a class="twitter" href="https://twitter.com/official_tut">Twitter</a><br><br>
+          <a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a><br><br>
+      </h4>
+      <div class="covid">
+        <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80"
           src="/assets/images/SACoronavirus.png"></a>
-    </nav>
+      </div>
   </footer>
 </div>

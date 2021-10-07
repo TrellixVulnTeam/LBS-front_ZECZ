@@ -1,61 +1,196 @@
-<header>
-  <h1>PROFILE</h1>
+<style>
+  
+  h1 img{
+     background-repeat: no-repeat;
+     float: left;
+     position: inherit;
+     display: grid;
+     margin-top: 15px;
+     padding-right: 0px;
+     margin-left: 10px;
+     filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+     text-shadow: 2px 2px 4px #fbfbfb;
+   }
+   h1{
+     line-height: 400%;
+     background-color: black;
+     font-family: 'Arial Narrow Bold', sans-serif;
+     font-weight: 100px;
+     color: white;
+     overflow: fixed;
+   }
+  
+  h1 nav{
+     float: right;
+     margin-top: 0px;
+     color: grey;
+     font-size: 18px;
+     list-style: none;
+     margin-right: 20px;
+   }
+  h3{
+     font-family: "Roboto", sans-serif;
+     font-weight: 100px;
+     font-size: 16px;
+     color: black;
+     margin-top: 0px;
+     padding-top: 0px;
+   }
+   h4{
+     font-family: "Roboto", sans-serif;
+     text-align: center;
+     margin-left: 500px;
+     margin-top: 0px;
+   }
+   .covid{
+     text-align: center;
+   }
+   .about{
+     text-align: center;
+     margin-bottom: 0px;
+   }
+   a{
+    color: white;
+     text-decoration: none;
+     padding: 5px 20px;
+     font-family: "Roboto", sans-serif;
+   }
+   nav a:hover{
+     border: 1px solid white;
+     color: red;
+   }
+   nav a:active{
+     border: 1px solid white;
+   }
+   #footer{
+    background-color: grey;
+     background-size: cover;
+     margin-top: 400px;
+   }
+   #btn{
+     font-family: "Roboto", sans-serif;
+     border-radius: 15px;
+     padding: 5px 7px 5px 7px;
+     color: black;
+     background-color: white;
+   }
+   #btn:hover{
+     background-color: black;
+     color: white;
+   }
+   form{
+     border-top: 1px;
+     border-style: solid grey 0.5px;
+   }
+   form label{
+     color: black;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+   }
+   .info{
+    padding: 5px;
+    font-size: 22px;
+    font-family: monospace;
+    
+   }
+   form input{
+     border-bottom: 2px solid black;
+     border-radius: 12px;
+     padding: 5px;
+   }
+   .password{
+    margin-left: 100px;
+    float: left;
+   }
+   .details{
+    
+     margin-top: 50px;
+    margin-right: 300px;
+    margin-left: 400px;
+    float: left;
+    border: 0.5px solid black;
+    border-radius: 15px;
+    background-color: rgb(197, 166, 169);
+    padding: 25px 20px 20px 20px;
+   }
+   p{
+     line-height: 30px;
+     background-color: grey;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     padding: 5px;
+   }
+ </style>
+
+
+
+
+<header>  
+  <h1><img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
+   Lab Booking system
+   <nav>
+    <a target="target" routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a target="target" routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a target="target" routerLink="/booking-details" routerLinkActive="active">Booking Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <button id="btn" type="button" (click)="onClick()">Logout</button>
+  </nav>
+ </h1>
 </header>
-<nav>
-  <a target="target" routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a target="target" routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a target="target" routerLink="/booking-details" routerLinkActive="active">Booking Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <button type="button" (click)="onClick()">Logout</button>
-</nav>
+
+<br>
 <br><br>
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
   
   <br><br>
+  <div class="details">
     <div *ngFor="let details of student">
       
     <h3  *ngFor="let details of student" for="stuNumber" name="stuNumber" ngModel="{{this.details.stud_no}}">
-       Name:
-        {{this.details.stu_name}}&nbsp;&nbsp;  <br><br>
+      <label class="info">Name:
+        {{this.details.stu_name}}</label> &nbsp;&nbsp; <br><br>
 
-        Surname:
-        {{this.details.stud_surname}}&nbsp;&nbsp;<br><br>
+        <label class="info">Surname:
+        {{this.details.stud_surname}}</label>&nbsp;&nbsp;<br><br>
 
-        Student Number:
-        {{this.details.stud_no}}&nbsp;&nbsp;<br><br>
+        <label class="info">Student Number:
+        {{this.details.stud_no}}</label>&nbsp;&nbsp;<br><br>
         
-        Email:
-        
-        {{this.details.email}}&nbsp;&nbsp;<br><br>
+       <label class="info">Email: 
+        {{this.details.email}}</label>&nbsp;&nbsp;<br><br>
       </h3>
     </div>
+  </div>
+  <div class="password">
+    <p>Change your password here</p>
+    <label for="password">Old Password</label><br>
+    <input type="password" ngModel name="password" ><br><br>
 
-  <label for="password">Old Password</label><br>
-  <input type="password" ngModel name="password" ><br><br>
+    <label for="password">Change Password</label><br>
+    <input type="password" ngModel name="newPassword" ><br><br>
 
-  <label for="password">Change Password</label><br>
-  <input type="password" ngModel name="newPassword" ><br><br>
+    <label for="confirm">Confirm new Password</label><br>
+    <input type="password" ngModel name="confirmPassword" >
 
-  <label for="confirm">Confirm new Password</label><br>
-  <input type="password" ngModel name="confirmPassword" >
+    <br><br><br>
+    <button id="btn" type="submit">Update</button>
+  </div>
+</form>
 
-  <br><br><br>
-  <button type="submit">Update</button>
-  </form>
- 
 <br>
 
-<div id ="footer">
+<div id="footer">
   <footer>
-    <a class="contact" href="">contact Us</a><br><br>
-    <a class="about" href="">About</a>
-          <div class="footer-widget social-widget">
-              <h4>Follow Us</h4>
-              <ul class="social-icons">
-                  <li><a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a></li>
-                  <li><a class="twitter" href="https://twitter.com/official_tut">Twitter</a></li>
-                  <li><a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a></li>
-              </ul>
-          </div>
-           <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="500" height="80" src="/assets/images/SACoronavirus.png"></a>
+    <br>
+    <div class="about">
+      <a class="contact" href="">contact Us</a><br><br>
+      <a class="about" href="">About</a>
+    </div> 
+        <h4>Follow Us<br><br>
+          <a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a><br><br>
+          <a class="twitter" href="https://twitter.com/official_tut">Twitter</a><br><br>
+          <a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a><br><br>
+      </h4>
+      <div class="covid">
+        <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80"
+          src="/assets/images/SACoronavirus.png"></a>
+      </div>
   </footer>
-</div> 
+</div>

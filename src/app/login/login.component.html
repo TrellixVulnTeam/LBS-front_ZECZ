@@ -1,40 +1,145 @@
-<header>
-  <h1>Lab Booking system</h1>
+<style>
+  
+  h1 img{
+     background-repeat: no-repeat;
+     float: left;
+     position: inherit;
+     display: grid;
+     margin-top: 15px;
+     padding-right: 0px;
+     padding-left: 10px;
+     filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+     text-shadow: 2px 2px 4px #fbfbfb;
+   }
+   h1{
+     line-height: 400%;
+     background-color: black;
+     font-family: 'Arial Narrow Bold', sans-serif;
+     font-weight: 100px;
+     color: white;
+   }
+  
+  h1 nav{
+     float: right;
+     margin-top: 0px;
+     color: grey;
+     font-size: 18px;
+     list-style: none;
+   }
+   h2{
+     text-align: center;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 30px;
+     color: rgb(236, 146, 146);
+     margin-top: 140px;
+   }
+   h4{
+     font-family: "Roboto", sans-serif;
+     text-align: center;
+     margin-left: 500px;
+     margin-top: 0px;
+   }
+   .covid{
+     text-align: center;
+   }
+   .about{
+     text-align: center;
+     margin-bottom: 0px;
+   }
+   a{
+     color: white;
+     text-decoration: none;
+     padding: 5px 25px;
+     font-family: "Roboto", sans-serif;
+ 
+   }
+   nav a:hover{
+     border: 1px solid white;
+     color: red;
+   }
+   nav a:active{
+     border: 1px solid white;
+   }
+   #footer{
+    background-color: grey;
+     background-size: cover;
+   }
+   #login_btn{
+    font-family: monospace;
+     border-radius: 15px;
+     padding: 8px 13px 8px 13px;
+     color: black;
+     background-color: white;
+   }
+   #login_btn:hover{
+     background-color: black;
+     color: white;
+   }
+   #forgotpass{
+     color: rgb(71, 71, 243);
+   }
+   form{
+     border-top: 1px;
+     border-style: solid grey 0.5px;
+   }
+   form label{
+     color: black;
+     font-family: fantasy;
+   }
+   form input{
+     border-bottom: 2px solid black;
+     border-radius: 12px;
+     padding: 5px;
+   }
+ </style>
+
+
+
+
+<header>  
+  <h1><img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
+   Lab Booking system
+     <nav>
+       <a target="target" routerLink="/register" routerLinkActive="active">Don't have an Account? Register here</a>&nbsp;&nbsp;
+   </nav>
+ </h1>
 </header>
-<h2 style="text-align:center">Login</h2>
+<h2>Login</h2>
 <br>
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
-    <input type="radio" [(ngModel)]="answer" value="Student" name="Student" required>Student 
-    <input type="radio" [(ngModel)]="answer" value="Lecturer" name="Lecturer" required>Lecturer
-    <input type="radio" [(ngModel)]="answer" value="Admin" name="Admin" required>Admin
+    <input type="radio" [(ngModel)]="answer" value="Student" name="Student" required><label>Student</label> 
+    <input type="radio" [(ngModel)]="answer" value="Lecturer" name="Lecturer" required><label>Lecturer</label>
+    <input type="radio" [(ngModel)]="answer" value="Admin" name="Admin" required><label>Admin</label>
     <br><br>
     <label for="username">Username</label><br>
     <input type="text" name="stuNumber" placeholder="Username" ngModel required><br><br>
     <label for="password">Password</label><br>
     <input type="password" name="password" ngModel placeholder="Password" required><br>
-     <br><br><button type="submit" ngModel>Login</button>
+     <br><br><button id="login_btn" type="submit" ngModel>Login</button>
      <br><br>
-     <a target="target" routerLink="/register" routerLinkActive="active">Register</a>&nbsp;&nbsp;
-     <a target="target" routerLink="/forgot-password" routerLinkActive="active">Forgot password</a>
+     <a id="forgotpass" target="target" routerLink="/forgot-password" routerLinkActive="active">Forgot Your password?</a>
 
     
    </form>
 
    <br>
 
-   <div id ="footer">
+   <div id="footer">
     <footer>
-      <a class="contact" href="">contact Us</a><br><br>
-      <a class="about" href="">About</a>
-            <div class="footer-widget social-widget">
-                <h4>Follow Us</h4>
-                <ul class="social-icons">
-                    <li><a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a></li>
-                    <li><a class="twitter" href="https://twitter.com/official_tut">Twitter</a></li>
-                    <li><a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a></li>
-                </ul>
-            </div>
-             <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80" src="/assets/images/SACoronavirus.png"></a>
+      <br>
+      <div class="about">
+        <a class="contact" href="">contact Us</a><br><br>
+        <a class="about" href="">About</a>
+      </div> 
+          <h4>Follow Us<br><br>
+            <a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a><br><br>
+            <a class="twitter" href="https://twitter.com/official_tut">Twitter</a><br><br>
+            <a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a><br><br>
+        </h4>
+        <div class="covid">
+          <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80"
+            src="/assets/images/SACoronavirus.png"></a>
+        </div>
     </footer>
   </div>
   

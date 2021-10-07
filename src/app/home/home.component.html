@@ -7,16 +7,17 @@
     display: grid;
     margin-top: 15px;
     padding-right: 0px;
-    padding-left: 10px;
+    margin-left: 10px;
     filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
     text-shadow: 2px 2px 4px #fbfbfb;
   }
   h1{
-    line-height: 400%;
+    line-height: 200%;
     background-color: black;
     font-family: 'Arial Narrow Bold', sans-serif;
     font-weight: 100px;
     color: white;
+    overflow: fixed;
   }
  
  h1 nav{
@@ -25,12 +26,16 @@
     color: grey;
     font-size: 18px;
     list-style: none;
+    margin-left: 800px;
   }
-  h3{
+ h3{
     font-family: "Roboto", sans-serif;
     font-weight: 100px;
-    font-size: 36px;
-    color: grey;
+    font-size: 16px;
+    color: white;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-left: 200px;
   }
   h4{
     font-family: "Roboto", sans-serif;
@@ -48,9 +53,13 @@
   a{
     color: white;
     text-decoration: none;
-    padding: 5px 20px;
+    padding: 0px;
+    margin-top: 0px;
     font-family: "Roboto", sans-serif;
 
+  }
+  nav a{
+    height: 100px;
   }
   nav a:hover{
     border: 1px solid white;
@@ -84,7 +93,7 @@
 
 <header>  
      <h1><img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
-      Welcome to Lab Booking system
+      Welcome to Lab Booking system<h3 *ngFor="let details of detail">{{this.details.stud_surname}}{{this.details.lec_surname}}&nbsp;&nbsp;{{this.details.stu_name}}{{this.details.lec_name}}</h3> 
         <nav>
           <a target="target" routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
           <a target="target" routerLink="/booking-details" routerLinkActive="active">Booking Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -92,10 +101,6 @@
           <button id="btn" type="button" (click)="onClick()">Logout</button>&nbsp;&nbsp;
       </nav>
     </h1>
-
-<div *ngFor="let details of detail">
-  <h3>{{this.details.stud_surname}}{{this.details.lec_surname}}&nbsp;&nbsp;{{this.details.stu_name}}{{this.details.lec_name}}</h3> 
-</div>
 </header>
 
 <br>
