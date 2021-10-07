@@ -21,8 +21,11 @@ export class Details{
   constructor(
     public stud_no: string,
     public stu_name: string,
-    public stud_surname: string,
-    public email: string,
+    public lab_slot: string,
+    public Lab_Name: string,
+    public Num_Bookings: string,
+    public date: string,
+    
   ){}
 }
 
@@ -38,7 +41,7 @@ export class ViewBookingsComponent implements OnInit {
   //variable to store the token
   tittle: string;
   //array to store the data from the database
-  booking:bookings[];
+  view:bookings[];
  //array to store the data from the localstorage
  detail: Details[];
  //variable to store the student Number
@@ -58,26 +61,21 @@ export class ViewBookingsComponent implements OnInit {
     //get Detail funtion that store the data from local storage to the detail array
     //and connects to booking API
     getDetails(){
-      this.detail = JSON.parse(this.tittle);
-        this.stuNumber = JSON.parse(this.detail[0].stud_no);
-        console.log(this.stuNumber);
-        
-    }
+      this.http.get<any>('http://localhost:3000/bookings')
+    .subscribe(response => {
 
-    onDelete(){    
-      this.http.delete('http://localhost:3000/cancelBooking')
-      .subscribe(results => {
-        this.ngOnInit();
-      console.log(results);
-      })
+      this.view = response;
+      console.log(response);
+    })
+        
     }
 
     //on submit function that calls the booking detail API
     onSubmit(data){
       //Retrieve information from the database
-      this.http.post('http://localhost:3000/bookingStatus',data,{responseType:'text'})
+      this.http.post('http://localhost:3000/bookings',data,{responseType:'text'})
       .subscribe((result) =>{
-        this.booking = JSON.parse(result);
+        this.view= JSON.parse(result);
         console.warn("Results", result);
         //this.booking = result;
       });

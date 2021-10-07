@@ -22,6 +22,10 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { AdminComponent } from './admin/admin.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ViewBookingsComponent } from './view-bookings/view-bookings.component';
+import { LectureLabBookingsComponent } from './lecture-lab-bookings/lecture-lab-bookings.component';
+import { LectureBookingDetailsComponent } from './lecture-booking-details/lecture-booking-details.component';
+import { LectureProfileComponent } from './lecture-profile/lecture-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +40,10 @@ import { ViewBookingsComponent } from './view-bookings/view-bookings.component';
     AdminComponent,
     ScheduleComponent,
     ViewBookingsComponent,
+    LectureLabBookingsComponent,
+    LectureBookingDetailsComponent,
+    LectureProfileComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -59,6 +67,10 @@ import { ViewBookingsComponent } from './view-bookings/view-bookings.component';
       {path: 'admin', component: AdminComponent},
       {path: 'schedule', component: ScheduleComponent},
       {path: 'view-bookings', component: ViewBookingsComponent},
+      {path: 'lecture-labBookings',component:LectureLabBookingsComponent},
+      {path: 'lecture-BookingDetails',component:LectureBookingDetailsComponent},
+      {path: 'lecture-profile',component:LectureProfileComponent},
+      
 
       {path: '', redirectTo: '/index', pathMatch: 'full'},
     ]),

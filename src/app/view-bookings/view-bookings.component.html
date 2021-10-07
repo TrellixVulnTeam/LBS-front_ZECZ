@@ -1,38 +1,41 @@
 <app-admin></app-admin>
-<p>view-bookings works!</p>
+<header>
+  <h1>View Bookings</h1>
+</header>
 
-<table class="table">
-    <thead>
-    <tr>
-      <th>Booking ID</th>&nbsp;
-      <th>Lab Name</th>&nbsp;
-      <th>Lab Slot</th>&nbsp;
-      <th>Student Number</th>&nbsp;
-      <th>Date</th>&nbsp;   
-      
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let bookings of booking">
-      <td><span>{{bookings.Booking_ID}}</span></td>&nbsp;
-      <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
-      <td><span>{{bookings.Lab_Slot}}</span></td>&nbsp;
-      <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
-      <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
-     
-      
-    </tr>
-    </tbody>
-  </table>
-  <br>
-  <input type="text" name="search-box" class="search-box"  (keyup)="sendData($event)">
-  <section class="search-results">
+ <!--Search bar-->
+<input type="text" name="search-box" class="search-box"  (keyup)="sendData($event)">
+  <section class="search-results" button="Search">
       <p>Search bookings</p>
 
     
   </section>
- 
-<br>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Student Number</th>&nbsp;
+        <th>Booking ID</th>&nbsp;
+        <th>Lab Name</th>&nbsp;
+        <th>Lab Slot</th>&nbsp;
+        <th>Date</th>&nbsp;   
+        
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let bookings of view">
+        <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
+        <td><span>{{bookings.Booking_ID}}</span></td>&nbsp;
+        <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
+        <td><span>{{bookings.Lab_Slot}}</span></td>&nbsp;
+        <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
+        
+        <td><span></span></td>&nbsp;
+        
+      </tr>
+      </tbody>
+    </table>
+    <br>
 <div id ="footer">
   <footer>
     <a class="contact" href="">contact Us</a><br><br>
