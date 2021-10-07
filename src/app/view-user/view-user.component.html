@@ -23,6 +23,8 @@ Registered Students
 
 
 <!--table to display all registered students-->
+
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
 <table class="table">
   <thead>
     <th>Student id</th>&nbsp;
@@ -34,19 +36,22 @@ Registered Students
   </thead>
   
    <tbody>
-    <tr *ngFor="let students of student">
+
+    <tr *ngFor="let students of student; let j = index">
                   
       <td><span>{{students.stud_no}}</span></td>&nbsp;
       <td><span>{{students.stu_name}}</span></td>&nbsp;
       <td><span>{{students.stud_surname}}</span></td>&nbsp;
       <td><span>{{students.email}}</span></td>&nbsp;
-      <td><button class="btn btn-sm btn-danger" type="button" (click)="onDelete()">
-        <i class="fa fa-remove"></i>Delete</button></td>
-     
+      <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="stuNumber" (click)="delete(students.stud_no)"  >Delete</a> </td>
+      
     </tr>
     
   </tbody>
 </table>
+
+</form>
+
 
 <br><br>
 Registered Lecturer
@@ -64,7 +69,7 @@ Registered Lecturer
       <td><span>{{lecturers.lec_id}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_name}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_email}}</span></td>&nbsp;
-      <td><button class="btn btn-sm btn-danger" type="button" (click)="onDelete()">
+      <td><button class="btn btn-sm btn-danger" type="button" (click)="delete(lecturers.lec_id)">
         <i class="fa fa-remove"></i>Delete</button></td>
     </tr>
 

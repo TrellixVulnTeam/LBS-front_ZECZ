@@ -20,6 +20,8 @@ export class Lecturers {
   ){}
 }
 
+
+
 @Component({
   selector: 'app-view-user',
   templateUrl: './view-user.component.html',
@@ -33,6 +35,8 @@ export class ViewUserComponent implements OnInit {
 
   lecturer:Lecturers[];
 
+  
+
   ngOnInit(): void {
     
     this.getStudents();
@@ -45,16 +49,118 @@ export class ViewUserComponent implements OnInit {
     localStorage.removeItem("token");
     this.router.navigate(['/index']);
   }
-  onDelete(){
-    
-    this.http.delete('http://localhost:3000/DeleteStudent')
-    .subscribe(results => {
-      this.ngOnInit();
-     console.log(results);
-      
 
+  delete(data){
+
+    var jsonPerson = '{"stuNumber":'+ data +'}';
+    var personObject = JSON.parse(jsonPerson);
+
+    console.log(data)
+    Swal.fire({
+      title: 'Are you sure you want to delete this user',
+      text: '',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'YES',
+      cancelButtonText: 'NO'
+    }).then((result) => {
+      if (result.isConfirmed) {
+  
+        //Add the User to the Database
+        this.http.post('http://localhost:3000/DeleteStudent',personObject,{responseType: 'text'})
+        .subscribe((result)=>{
+            console.warn("result",result)
+            if(result == 'The student is successfully deleted')
+            {
+              Swal.fire(
+                'user has been successfuly deleted',
+                '',
+                'success'
+              )
+            }else{
+              
+              Swal.fire(
+                result,
+                '',
+                'warning'
+              )
+             
+            }
+            
+        })
+        console.warn(data);
+  
+        
+        
+      
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled!',
+          '',
+          'error'
+        )
+      }
     })
-  }
+  
+
+
+}
+
+onSubmit(data){
+
+  console.log(data)
+    Swal.fire({
+      title: 'Are you sure you want to delete this user',
+      text: '',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'YES',
+      cancelButtonText: 'NO'
+    }).then((result) => {
+      if (result.isConfirmed) {
+  
+        //Add the User to the Database
+        this.http.post('http://localhost:3000/DeleteStudent',data,{responseType: 'text'})
+        .subscribe((result)=>{
+            console.warn("result",result)
+            if(result == 'The student is successfully deleted')
+            {
+              Swal.fire(
+                'user has been successfuly deleted',
+                '',
+                'success'
+              )
+            }else{
+              
+              Swal.fire(
+                result,
+                '',
+                'warning'
+              )
+             
+            }
+            
+        })
+        console.warn(data);
+  
+        
+        
+      
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled!',
+          '',
+          'error'
+        )
+      }
+    })
+  
+  
+  
+
+}
+
+
   getStudents(){
     this.http.get<any>('http://localhost:3000/studentsList')
     .subscribe(response => {
