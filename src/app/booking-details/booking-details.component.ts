@@ -58,35 +58,91 @@ export class BookingDetailsComponent implements OnInit {
     getDetails(){
       this.detail = JSON.parse(this.tittle);
         this.stuNumber = JSON.parse(this.detail[0].stud_no);
-        console.log(this.stuNumber);
         
-    }
+        var st = JSON.stringify(this.stuNumber)
+        console.log(st);
 
-    onDelete(){    
-      this.http.delete('http://localhost:3000/cancelBooking')
-      .subscribe(results => {
-        this.ngOnInit();
-      console.log(results);
-      })
-    }
+        //converting string to object
+        var jsonPerson = '{"stuNumber":'+ st +'}';
+        var personObject = JSON.parse(jsonPerson);
 
-    //on submit function that calls the booking detail API
-    onSubmit(data){
-      //Retrieve information from the database
-      this.http.post('http://localhost:3000/bookingStatus',data,{responseType:'text'})
+        //Retrieve information from the database
+      this.http.post('http://localhost:3000/bookingStatus',personObject,{responseType:'text'})
       .subscribe((result) =>{
         this.booking = JSON.parse(result);
         console.warn("Results", result);
         //this.booking = result;
       });
       //API for number of bookings
-      this.http.post('http://localhost:3000/bookingsNum',data,{responseType:'text'})
+      this.http.post('http://localhost:3000/bookingsNum',personObject,{responseType:'text'})
       .subscribe((result) =>{
         //this.Num_Bookings = JSON.stringify(result);
         this.Num_Bookings = result;
         console.log(this.Num_Bookings);
       });
-      console.warn(data);
+      console.warn(jsonPerson);
+
+        
+    }
+
+    onDelete(data){    
+      
+
+      var jsonPerson = '{"stuNumber":'+ data +'}';
+      var personObject = JSON.parse(jsonPerson);
+  
+      console.log(data)
+      Swal.fire({
+        title: 'Are you sure you want to cancel this booking',
+        text: '',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'YES',
+        cancelButtonText: 'NO'
+      }).then((result) => {
+        if (result.isConfirmed) {
+    
+          //Add the User to the Database
+          this.http.post('http://localhost:3000/cancelBooking',personObject,{responseType: 'text'})
+          .subscribe((result)=>{
+              console.warn("result",result)
+              if(result == 'The student is successfully deleted')
+              {
+                Swal.fire(
+                  'user has been successfuly deleted',
+                  '',
+                  'success'
+                )
+              }else{
+                
+                Swal.fire(
+                  result,
+                  '',
+                  'warning'
+                )
+               
+              }
+              
+          })
+          console.warn(data);
+    
+          
+          
+        
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire(
+            'Cancelled!',
+            '',
+            'error'
+          )
+        }
+      })
+
+    }
+
+    //on submit function that calls the booking detail API
+    onSubmit(data){
+    
     }
 
 

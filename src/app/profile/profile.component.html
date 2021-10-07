@@ -1,5 +1,8 @@
 <style>
   
+
+
+
   h1 img{
      background-repeat: no-repeat;
      float: left;
@@ -7,53 +10,75 @@
      display: grid;
      margin-top: 15px;
      padding-right: 0px;
-     margin-left: 10px;
+     margin-left: 0px;
      filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
      text-shadow: 2px 2px 4px #fbfbfb;
    }
    h1{
-     line-height: 400%;
+     line-height: 450%;
      background-color: black;
      font-family: 'Arial Narrow Bold', sans-serif;
      font-weight: 100px;
      color: white;
      overflow: fixed;
+     margin-top: 15px;
    }
   
   h1 nav{
      float: right;
-     margin-top: 0px;
+     margin-top: 15px;
      color: grey;
      font-size: 18px;
      list-style: none;
-     margin-right: 20px;
+     margin-left: 800px;
+     width:100%
+     
    }
   h3{
      font-family: "Roboto", sans-serif;
      font-weight: 100px;
      font-size: 16px;
-     color: black;
+     color: white;
      margin-top: 0px;
      padding-top: 0px;
+     margin-left: 200px;
    }
    h4{
      font-family: "Roboto", sans-serif;
      text-align: center;
-     margin-left: 500px;
+     margin-left: 0px;
      margin-top: 0px;
+     font-size: 1em;
    }
+   h5{
+     font-family: "Roboto", sans-serif;
+     text-align: center;
+     margin-left: 0px;
+     margin-top: 0px;
+     font-size: 1em;
+   }
+
    .covid{
      text-align: center;
+     border-radius: 50%;
    }
    .about{
      text-align: center;
      margin-bottom: 0px;
    }
    a{
-    color: white;
+     color: white;
      text-decoration: none;
-     padding: 5px 20px;
+     padding: 0px;
+     margin-top: 0px;
      font-family: "Roboto", sans-serif;
+ 
+   }
+   nav a{
+     height: 100px;
+     padding-right: 0px;
+     margin-left: 0px;
+     
    }
    nav a:hover{
      border: 1px solid white;
@@ -65,85 +90,55 @@
    #footer{
     background-color: grey;
      background-size: cover;
-     margin-top: 400px;
    }
    #btn{
      font-family: "Roboto", sans-serif;
      border-radius: 15px;
      padding: 5px 7px 5px 7px;
-     color: black;
+     color: orangered;
      background-color: white;
    }
    #btn:hover{
      background-color: black;
      color: white;
    }
-   form{
-     border-top: 1px;
-     border-style: solid grey 0.5px;
-   }
-   form label{
-     color: black;
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
-   }
-   .info{
-    padding: 5px;
-    font-size: 22px;
-    font-family: monospace;
-    
-   }
-   form input{
-     border-bottom: 2px solid black;
-     border-radius: 12px;
-     padding: 5px;
-   }
-   .password{
-    margin-left: 100px;
-    float: left;
-   }
-   .details{
-    
-     margin-top: 50px;
-    margin-right: 300px;
-    margin-left: 400px;
-    float: left;
-    border: 0.5px solid black;
-    border-radius: 15px;
-    background-color: rgb(197, 166, 169);
-    padding: 25px 20px 20px 20px;
-   }
    p{
-     line-height: 30px;
-     background-color: grey;
      font-family: Verdana, Geneva, Tahoma, sans-serif;
-     padding: 5px;
+     margin-left: 350px;
+     margin-right: 350px;
    }
  </style>
 
+<nav>
+  <h1 *ngFor="let students of student">
+    <img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
+      WELCOME {{this.students.stu_name}} {{this.students.stud_surname}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a target="target" routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a target="target" routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a target="target" routerLink="/booking-details" routerLinkActive="active">Booking Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <button id="btn" type="button" (click)="onClick()">Logout</button>
+  </h1>
+</nav>
 
 
-
-<header>  
-  <h1><img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
-   Lab Booking system
-   <nav>
-    <a target="target" routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a target="target" routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a target="target" routerLink="/booking-details" routerLinkActive="active">Booking Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <button id="btn" type="button" (click)="onClick()">Logout</button>
-  </nav>
- </h1>
-</header>
-
-<br>
-<br><br>
-<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
   
-  <br><br>
+
+
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
+ 
   <div class="details">
     <div *ngFor="let details of student">
       
-    <h3  *ngFor="let details of student" for="stuNumber" name="stuNumber" ngModel="{{this.details.stud_no}}">
+    <h5  *ngFor="let details of student" for="stuNumber" name="stuNumber" ngModel="{{this.details.stud_no}}">
       <label class="info">Name:
         {{this.details.stu_name}}</label> &nbsp;&nbsp; <br><br>
 
@@ -155,11 +150,11 @@
         
        <label class="info">Email: 
         {{this.details.email}}</label>&nbsp;&nbsp;<br><br>
-      </h3>
+      </h5>
     </div>
   </div>
   <div class="password">
-    <p>Change your password here</p>
+    <p style="">Change your password here</p>
     <label for="password">Old Password</label><br>
     <input type="password" ngModel name="password" ><br><br>
 
@@ -176,21 +171,26 @@
 
 <br>
 
+<br><br><br><br>
 <div id="footer">
   <footer>
     <br>
+    <div class="covid">
+      <a href="https://sacoronavirus.co.za/"><img style = " border-radius: 2%;"alt="SACoronavirus Resource and News Portal" width="60%" height="80"
+        src="/assets/images/SACoronavirus.png"></a>
+    </div>
+    <br>
     <div class="about">
+    <h4>
       <a class="contact" href="">contact Us</a><br><br>
       <a class="about" href="">About</a>
+    </h4>
     </div> 
         <h4>Follow Us<br><br>
           <a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a><br><br>
           <a class="twitter" href="https://twitter.com/official_tut">Twitter</a><br><br>
           <a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a><br><br>
-      </h4>
-      <div class="covid">
-        <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80"
-          src="/assets/images/SACoronavirus.png"></a>
-      </div>
+        </h4>
+      
   </footer>
-</div>
+</div> 
