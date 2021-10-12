@@ -98,6 +98,16 @@
      margin-left: 350px;
      margin-right: 350px;
    }
+   .table td a{
+     color: black;
+     background-color: red;
+     border-radius: 1.5px;
+   }
+   .table td a:hover{
+     color: wheat;
+     background-color: darkred;
+     border-radius: 1.5px;
+   }
  </style>
 
 
@@ -149,7 +159,8 @@
       <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
       <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
       
-      <td><a style="color: black; background-color: red; border-radius: 1.5px; " type="submit" class="btn btn-sm text-white btn-danger"  name="bookingID" (click)="onDelete(bookings.Stud_ID)"  >Cancel Booking</a> </td>
+      <td><a  class="cancel" 
+        type="submit" class="btn btn-sm text-white btn-danger"  name="bookingID" (click)="onDelete(bookings.Stud_ID)"  >Cancel Booking</a> </td>
       <td><span></span></td>&nbsp;
       
     </tr>

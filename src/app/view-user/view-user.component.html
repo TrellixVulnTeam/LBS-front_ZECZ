@@ -1,4 +1,31 @@
 
+<style>
+  
+  a{
+    font-family: "Roboto", sans-serif;
+  }
+    .table td a{
+     color: black;
+     background-color: red;
+     border-radius: 1.5px;
+   }.table td a:hover{
+     color: wheat;
+     background-color: darkred;
+     border-radius: 1.5px;
+   }
+   .table2 td a{
+     color: black;
+     background-color: red;
+     border-radius: 1.5px;
+   }
+   .table2 td a:hover{
+     color: wheat;
+     background-color: darkred;
+     border-radius: 1.5px;
+   }
+
+
+</style>
 <app-admin></app-admin>
 <!--<nav>
     <a   routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|
@@ -43,8 +70,7 @@ Registered Students
       <td><span>{{students.stu_name}}</span></td>&nbsp;
       <td><span>{{students.stud_surname}}</span></td>&nbsp;
       <td><span>{{students.email}}</span></td>&nbsp;
-      <td><a style="color:black; background-color: red; border-radius: 1.5px;" 
-        type="submit" class="btn btn-sm text-white btn-danger"  name="stuNumber" (click)="delete(students.stud_no)"  >Delete</a> </td>
+      <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="stuNumber" (click)="delete(students.stud_no)"  >Delete</a> </td>
       
     </tr>
     
@@ -70,8 +96,7 @@ Registered Lecturer
       <td><span>{{lecturers.lec_id}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_name}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_email}}</span></td>&nbsp;
-      <td><a style="color:black; background-color: red; border-radius: 1.5px;" 
-        type="submit" class="btn btn-sm text-white btn-danger"  name="lecturerID" (click)="deleteLecturer(lecturers.lec_id)"  >Delete</a>
+      <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="lecturerID" (click)="deleteLecturer(lecturers.lec_id)"  >Delete</a>
       </td>
     </tr>
 
