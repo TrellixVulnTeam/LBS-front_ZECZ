@@ -102,7 +102,7 @@ export class LoginComponent implements OnInit {
             )
             //Navigate to the Home page
             
-            this.router.navigate(['/home']);
+            this.router.navigate(['/lecture-home']);
 
              
             }

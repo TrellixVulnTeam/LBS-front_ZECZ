@@ -21,9 +21,9 @@ export class bookings {
 //Exports class for details to store localstorage data
 export class Details{
   constructor(
-    public stud_no: string,
-    public stu_name: string,
-    public stud_surname: string,
+    public lec_id: string,
+    public lec_name: string,
+    public lec_surname: string,
     public email: string,
   ){}
 }
@@ -58,7 +58,7 @@ export class LectureBookingDetailsComponent  implements OnInit {
     //and connects to booking API
     getDetails(){
       this.detail = JSON.parse(this.tittle);
-        this.stuNumber = JSON.parse(this.detail[0].stud_no);
+        this.stuNumber = JSON.parse(this.detail[0].lec_id);
         
         var st = JSON.stringify(this.stuNumber)
         console.log(st);
@@ -89,7 +89,7 @@ export class LectureBookingDetailsComponent  implements OnInit {
     onDelete(data){    
       
 
-      var jsonPerson = '{"stuNumber":'+ data +'}';
+      var jsonPerson = '{"bookingID":'+ data +'}';
       var personObject = JSON.parse(jsonPerson);
   
       console.log(data)
@@ -104,13 +104,13 @@ export class LectureBookingDetailsComponent  implements OnInit {
         if (result.isConfirmed) {
     
           //Add the User to the Database
-          this.http.post('http://localhost:3000/cancelBooking',personObject,{responseType: 'text'})
+          this.http.post('http://localhost:3000/lec_cancelBooking',personObject,{responseType: 'text'})
           .subscribe((result)=>{
               console.warn("result",result)
-              if(result == 'The student is successfully deleted')
+              if(result == 'booking has been cancelled')
               {
                 Swal.fire(
-                  'user has been successfuly deleted',
+                  'you have successfully cancelled your booking',
                   '',
                   'success'
                 )

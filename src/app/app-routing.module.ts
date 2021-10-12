@@ -11,6 +11,10 @@ import { BookingDetailsComponent } from './booking-details/booking-details.compo
 import { ViewUserComponent } from './view-user/view-user.component';
 import { AdminComponent } from './admin/admin.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { LectureLabBookingsComponent} from './lecture-lab-bookings/lecture-lab-bookings.component';
+import { LectureBookingDetailsComponent } from './lecture-booking-details/lecture-booking-details.component';
+
+
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -23,7 +27,9 @@ const routes: Routes = [
   {path: 'booking-details', component: BookingDetailsComponent},
   {path: 'view-user', component: ViewUserComponent},
   {path: 'admin', component: AdminComponent},
-  {path: 'schedule', component: ScheduleComponent}
+  {path: 'schedule', component: ScheduleComponent},
+  {path: 'lecture-lab-bookings', component: LectureLabBookingsComponent},
+  {path: 'lecture-booking-details', component:LectureBookingDetailsComponent }
 
 ];
 
