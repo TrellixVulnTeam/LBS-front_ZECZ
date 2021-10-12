@@ -88,7 +88,7 @@ export class BookingDetailsComponent implements OnInit {
     onDelete(data){    
       
 
-      var jsonPerson = '{"stuNumber":'+ data +'}';
+      var jsonPerson = '{"bookingID":'+ data +'}';
       var personObject = JSON.parse(jsonPerson);
   
       console.log(data)
@@ -106,10 +106,10 @@ export class BookingDetailsComponent implements OnInit {
           this.http.post('http://localhost:3000/cancelBooking',personObject,{responseType: 'text'})
           .subscribe((result)=>{
               console.warn("result",result)
-              if(result == 'The student is successfully deleted')
+              if(result == 'booking has been cancelled')
               {
                 Swal.fire(
-                  'user has been successfuly deleted',
+                  'you have successfully cancelled your booking',
                   '',
                   'success'
                 )
