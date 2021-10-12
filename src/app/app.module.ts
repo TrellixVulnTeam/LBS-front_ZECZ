@@ -26,6 +26,7 @@ import { LectureLabBookingsComponent } from './lecture-lab-bookings/lecture-lab-
 import { LectureBookingDetailsComponent } from './lecture-booking-details/lecture-booking-details.component';
 import { LectureProfileComponent } from './lecture-profile/lecture-profile.component';
 import { LectureHomeComponent } from './lecture-home/lecture-home.component';
+import { ViewScheduleComponent } from './view-schedule/view-schedule.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { LectureHomeComponent } from './lecture-home/lecture-home.component';
     LectureBookingDetailsComponent,
     LectureProfileComponent,
     LectureHomeComponent,
+    ViewScheduleComponent,
     
   ],
   imports: [
