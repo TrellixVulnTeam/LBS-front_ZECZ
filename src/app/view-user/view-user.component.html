@@ -1,9 +1,36 @@
 
+<style>
+  
+  a{
+    font-family: "Roboto", sans-serif;
+  }
+    .table td a{
+     color: black;
+     background-color: red;
+     border-radius: 1.5px;
+   }.table td a:hover{
+     color: wheat;
+     background-color: darkred;
+     border-radius: 1.5px;
+   }
+   .table2 td a{
+     color: black;
+     background-color: red;
+     border-radius: 1.5px;
+   }
+   .table2 td a:hover{
+     color: wheat;
+     background-color: darkred;
+     border-radius: 1.5px;
+   }
+
+
+</style>
 <app-admin></app-admin>
 <!--<nav>
-    <a target="target" routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|
-    <a target="target" routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|
-    <a target="target" routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;
+    <a   routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|
+    <a   routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|
+    <a   routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;
     
   </nav>-->
 
@@ -13,8 +40,8 @@
   </h1>
 </header>
 <nav>
-  <a target="target" routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a target="target" routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a   routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a   routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <button type="button" (click)="onClick()">Logout</button>
 </nav>
 <br>
@@ -24,7 +51,7 @@ Registered Students
 
 <!--table to display all registered students-->
 
-<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
+<form #userPost="ngForm"  style="text-align: center;">
 <table class="table">
   <thead>
     <th>Student id</th>&nbsp;
@@ -69,8 +96,8 @@ Registered Lecturer
       <td><span>{{lecturers.lec_id}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_name}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_email}}</span></td>&nbsp;
-      <td><button class="btn btn-sm btn-danger" type="button" (click)="delete(lecturers.lec_id)">
-        <i class="fa fa-remove"></i>Delete</button></td>
+      <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="lecturerID" (click)="deleteLecturer(lecturers.lec_id)"  >Delete</a>
+      </td>
     </tr>
 
    </tbody>
