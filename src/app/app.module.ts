@@ -25,6 +25,7 @@ import { ViewBookingsComponent } from './view-bookings/view-bookings.component';
 import { LectureLabBookingsComponent } from './lecture-lab-bookings/lecture-lab-bookings.component';
 import { LectureBookingDetailsComponent } from './lecture-booking-details/lecture-booking-details.component';
 import { LectureProfileComponent } from './lecture-profile/lecture-profile.component';
+import { LectureHomeComponent } from './lecture-home/lecture-home.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { LectureProfileComponent } from './lecture-profile/lecture-profile.compo
     LectureLabBookingsComponent,
     LectureBookingDetailsComponent,
     LectureProfileComponent,
+    LectureHomeComponent,
     
   ],
   imports: [
@@ -70,6 +72,7 @@ import { LectureProfileComponent } from './lecture-profile/lecture-profile.compo
       {path: 'lecture-labBookings',component:LectureLabBookingsComponent},
       {path: 'lecture-BookingDetails',component:LectureBookingDetailsComponent},
       {path: 'lecture-profile',component:LectureProfileComponent},
+      {path: 'lecture-home',component: LectureHomeComponent},
       
 
       {path: '', redirectTo: '/index', pathMatch: 'full'},

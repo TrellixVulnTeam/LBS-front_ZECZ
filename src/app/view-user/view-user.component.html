@@ -24,7 +24,7 @@ Registered Students
 
 <!--table to display all registered students-->
 
-<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
+<form #userPost="ngForm"  style="text-align: center;">
 <table class="table">
   <thead>
     <th>Student id</th>&nbsp;
@@ -43,7 +43,8 @@ Registered Students
       <td><span>{{students.stu_name}}</span></td>&nbsp;
       <td><span>{{students.stud_surname}}</span></td>&nbsp;
       <td><span>{{students.email}}</span></td>&nbsp;
-      <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="stuNumber" (click)="delete(students.stud_no)"  >Delete</a> </td>
+      <td><a style="color:rgb(0, 0, 0); background-color: red; border-radius: 1.5px;" 
+        type="submit" class="btn btn-sm text-white btn-danger"  name="stuNumber" (click)="delete(students.stud_no)"  >Delete</a> </td>
       
     </tr>
     
@@ -69,8 +70,9 @@ Registered Lecturer
       <td><span>{{lecturers.lec_id}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_name}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_email}}</span></td>&nbsp;
-      <td><button class="btn btn-sm btn-danger" type="button" (click)="delete(lecturers.lec_id)">
-        <i class="fa fa-remove"></i>Delete</button></td>
+      <td><a style="color:rgb(0, 0, 0); background-color: red; border-radius: 1.5px;" 
+        type="submit" class="btn btn-sm text-white btn-danger"  name="lecturerID" (click)="deleteLecturer(lecturers.lec_id)"  >Delete</a>
+      </td>
     </tr>
 
    </tbody>

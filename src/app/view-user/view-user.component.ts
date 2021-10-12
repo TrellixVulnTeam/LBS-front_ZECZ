@@ -106,7 +106,9 @@ export class ViewUserComponent implements OnInit {
 
 }
 
-onSubmit(data){
+deleteLecturer(data){
+  var jsonPerson = '{"lecturerID":'+ data +'}';
+  var personObject = JSON.parse(jsonPerson);
 
   console.log(data)
     Swal.fire({
@@ -120,10 +122,10 @@ onSubmit(data){
       if (result.isConfirmed) {
   
         //Add the User to the Database
-        this.http.post('http://localhost:3000/DeleteStudent',data,{responseType: 'text'})
+        this.http.post('http://localhost:3000/DeleteLecturer',personObject,{responseType: 'text'})
         .subscribe((result)=>{
             console.warn("result",result)
-            if(result == 'The student is successfully deleted')
+            if(result == 'The Lecturer is successfully deleted')
             {
               Swal.fire(
                 'user has been successfuly deleted',
