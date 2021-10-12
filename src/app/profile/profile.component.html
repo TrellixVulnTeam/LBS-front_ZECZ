@@ -1,56 +1,35 @@
 <style>
-  
-
-
-
-  h1 img{
+h1 img{
      background-repeat: no-repeat;
      float: left;
      position: inherit;
      display: grid;
      margin-top: 15px;
      padding-right: 0px;
-     margin-left: 0px;
+     padding-left: 10px;
      filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
      text-shadow: 2px 2px 4px #fbfbfb;
    }
-   h1{
-     line-height: 450%;
-     background-color: black;
-     font-family: 'Arial Narrow Bold', sans-serif;
-     font-weight: 100px;
-     color: white;
-     overflow: fixed;
-     margin-top: 15px;
-   }
-  
-  h1 nav{
-     float: right;
-     margin-top: 15px;
-     color: grey;
-     font-size: 18px;
-     list-style: none;
-     margin-left: 800px;
-     width:100%
-     
-   }
+  h1{
+    line-height: 400%;
+    background-color: black;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    color: white;
+    overflow: fixed;
+    margin-top: 15px;
+  }
+ 
+ nav{
+    float: right;
+    list-style: none;
+    font-size: 16px;
+    margin-right: 10px;
+  }
   h3{
-     font-family: "Roboto", sans-serif;
-     font-weight: 100px;
-     font-size: 16px;
-     color: white;
-     margin-top: 0px;
-     padding-top: 0px;
-     margin-left: 200px;
+     text-align: center;
    }
    h4{
-     font-family: "Roboto", sans-serif;
-     text-align: center;
-     margin-left: 0px;
-     margin-top: 0px;
-     font-size: 1em;
-   }
-   h5{
      font-family: "Roboto", sans-serif;
      text-align: center;
      margin-left: 0px;
@@ -66,6 +45,7 @@
      text-align: center;
      margin-bottom: 0px;
    }
+   
    a{
      color: white;
      text-decoration: none;
@@ -76,8 +56,7 @@
    }
    nav a{
      height: 100px;
-     padding-right: 0px;
-     margin-left: 0px;
+     padding: 6px;
      
    }
    nav a:hover{
@@ -94,7 +73,7 @@
    #btn{
      font-family: "Roboto", sans-serif;
      border-radius: 15px;
-     padding: 5px 7px 5px 7px;
+     padding: 7px 10px 7px 10px;
      color: orangered;
      background-color: white;
    }
@@ -107,23 +86,33 @@
      margin-left: 350px;
      margin-right: 350px;
    }
+   form{
+     border-top: 1px;
+     border-style: solid grey 0.5px;
+   }
+   form label{
+     color: black;
+     font-family: fantasy;
+   }
+   form input{
+     border-bottom: 2px solid black;
+     border-radius: 12px;
+     padding: 5px;
+   }
  </style>
 
+<header>  
+  <h1 *ngFor="let details of student">
+  <img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
+    {{this.details.stu_name}} {{this.details.stud_surname}}  
 <nav>
-  <h1 *ngFor="let students of student">
-    <img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
-      WELCOME {{this.students.stu_name}} {{this.students.stud_surname}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
-      <a target="target" routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-      <a target="target" routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-      <a target="target" routerLink="/booking-details" routerLinkActive="active">Booking Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-      <button id="btn" type="button" (click)="onClick()">Logout</button>
-  </h1>
+  <a routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a routerLink="/booking-details" routerLinkActive="active">Booking Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <button id="btn" type="button" (click)="onClick()">Logout</button>
 </nav>
-
-
-  
+</h1>
+</header>
 
 
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
@@ -131,7 +120,7 @@
   <div class="details">
     <div *ngFor="let details of student">
       
-    <h5  *ngFor="let details of student" for="stuNumber" name="stuNumber" ngModel="{{this.details.stud_no}}">
+    <h3  *ngFor="let details of student" for="stuNumber" name="stuNumber" ngModel="{{this.details.stud_no}}">
       <label class="info">Name:
         {{this.details.stu_name}}</label> &nbsp;&nbsp; <br><br>
 
@@ -143,11 +132,11 @@
         
        <label class="info">Email: 
         {{this.details.email}}</label>&nbsp;&nbsp;<br><br>
-      </h5>
+      </h3>
     </div>
   </div>
   <div class="password">
-    <p style="">Change your password here</p>
+    <p>Change your password here</p>
     <label for="password">Old Password</label><br>
     <input type="password" ngModel name="password" ><br><br>
 
@@ -169,7 +158,7 @@
   <footer>
     <br>
     <div class="covid">
-      <a href="https://sacoronavirus.co.za/"><img style = " border-radius: 2%;"alt="SACoronavirus Resource and News Portal" width="60%" height="80"
+      <a href="https://sacoronavirus.co.za/"><img style = " border-radius: 15px;"alt="SACoronavirus Resource and News Portal" width="30%" height="80"
         src="/assets/images/SACoronavirus.png"></a>
     </div>
     <br>
@@ -186,4 +175,4 @@
         </h4>
       
   </footer>
-</div> 
+</div>
