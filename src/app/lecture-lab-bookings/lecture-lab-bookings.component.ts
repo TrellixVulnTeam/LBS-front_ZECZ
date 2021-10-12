@@ -26,12 +26,12 @@ export class Labs {
   }
 }
 //export class for students for storing data from localstorage
-export class students {
+export class lectures {
   constructor(
-    public stud_no: string,
-    public stu_name: string,
-    public stud_surname: string,
-    public email: string,
+    public lec_id: string,
+    public lec_name: string,
+    public lec_surname: string,
+    public lec_email: string,
     
   ) {
   }
@@ -59,7 +59,7 @@ export class LectureLabBookingsComponent implements OnInit {
   //variable that holds a token
   tittle:string
   //students array that holds data retrieved from localstorage
-  student:students[];
+  student:lectures[];
   //variable that holds student Number
   studentNo;
 
@@ -83,7 +83,7 @@ export class LectureLabBookingsComponent implements OnInit {
 
   //get function that receive the results from the database
   getlab(){
-    this.http.get<any>('http://localhost:3000/availableLabs').subscribe(
+    this.http.get<any>('http://localhost:3000/lectureAvailLabs').subscribe(
       response => {
        
         
@@ -100,62 +100,10 @@ export class LectureLabBookingsComponent implements OnInit {
   getStudents(){
 
     this.student = JSON.parse(this.tittle);
-    this.studentNo = this.student[0].stud_no;
+    this.studentNo = this.student[0].lec_id;
     console.log(this.studentNo);
   }
 
-
-  //onclick function that cancel booking
- /* onClickCancel(data){
-    //sweet Alerts pop up messages
-    Swal.fire({
-      title: 'Cancel this booking?',
-      text: '',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'YES',
-      cancelButtonText: 'NO'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // TODO: Use EventEmitter with form value
-        //console.warn(this.ngForm.value);
-        
-
-        //Add the User to the Database
-        this.http.post('http://localhost:3000/cancelBooking',data, {responseType:'text'})
-        .subscribe((result)=>{
-            console.warn("result",result)
-            //On submit validation
-            if(result == 'booking has been cancelled')
-            {
-              Swal.fire(
-                result,
-                '',
-                'success'
-              )
-              //Navigate to the Login page
-              
-            }else{
-              Swal.fire(
-                result,
-                '',
-                'warning'
-              )
-            }
-
-            
-        })
-        console.warn(data);
-        
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(
-          'Cancelled',
-          'Could Not cancel booking',
-          'error'
-        )
-      }
-    })
-  }*/
  
   //On submit button
   onSubmit(data)
@@ -176,7 +124,7 @@ export class LectureLabBookingsComponent implements OnInit {
         
 
         //Add the User to the Database
-        this.http.post('http://localhost:3000/book',data, {responseType:'text'})
+        this.http.post('http://localhost:3000/lectureBooking',data, {responseType:'text'})
         .subscribe((result)=>{
             console.warn("result",result)
             //On submit validation

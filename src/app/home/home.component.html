@@ -97,11 +97,18 @@
 <header>  
           <h1 *ngFor="let details of detail">
           <img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
-            WELCOME &nbsp;&nbsp;{{this.details.stu_name}} {{this.details.stud_surname}}  
+
+            WELCOME {{this.details.stu_name}} {{this.details.stud_surname}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+    
+
+              
         <nav>
           <a routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
           <a routerLink="/booking-details" routerLinkActive="active">Booking Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
           <a routerLink="/profile" routerLinkActive="active">Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+
           <button id="btn" type="button" (click)="onClick()">Logout</button>&nbsp;&nbsp;
       </nav>
     </h1>
