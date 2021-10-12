@@ -111,9 +111,9 @@
       WELCOME {{this.Details.stu_name}} {{this.Details.stud_surname}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
-      <a target="target" routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-      <a target="target" routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-      <a target="target" routerLink="/profile" routerLinkActive="active">Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a   routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a   routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a   routerLink="/profile" routerLinkActive="active">Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
       <button type="button" (click)="onClick()">Logout</button>
   </h1>
   </nav>
@@ -149,7 +149,7 @@
       <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
       <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
       
-      <td><a style="color: black;" type="submit" class="btn btn-sm text-white btn-danger"  name="bookingID" (click)="onDelete(bookings.Stud_ID)"  >Cancel Booking</a> </td>
+      <td><a style="color: black; background-color: red; border-radius: 1.5px; " type="submit" class="btn btn-sm text-white btn-danger"  name="bookingID" (click)="onDelete(bookings.Stud_ID)"  >Cancel Booking</a> </td>
       <td><span></span></td>&nbsp;
       
     </tr>

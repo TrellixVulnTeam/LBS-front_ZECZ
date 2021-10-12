@@ -1,9 +1,9 @@
 
 <app-admin></app-admin>
 <!--<nav>
-    <a target="target" routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|
-    <a target="target" routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|
-    <a target="target" routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;
+    <a   routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|
+    <a   routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|
+    <a   routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;
     
   </nav>-->
 
@@ -13,8 +13,8 @@
   </h1>
 </header>
 <nav>
-  <a target="target" routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a target="target" routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a   routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a   routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <button type="button" (click)="onClick()">Logout</button>
 </nav>
 <br>
@@ -43,7 +43,7 @@ Registered Students
       <td><span>{{students.stu_name}}</span></td>&nbsp;
       <td><span>{{students.stud_surname}}</span></td>&nbsp;
       <td><span>{{students.email}}</span></td>&nbsp;
-      <td><a style="color:rgb(0, 0, 0); background-color: red; border-radius: 1.5px;" 
+      <td><a style="color:black; background-color: red; border-radius: 1.5px;" 
         type="submit" class="btn btn-sm text-white btn-danger"  name="stuNumber" (click)="delete(students.stud_no)"  >Delete</a> </td>
       
     </tr>
@@ -70,7 +70,7 @@ Registered Lecturer
       <td><span>{{lecturers.lec_id}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_name}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_email}}</span></td>&nbsp;
-      <td><a style="color:rgb(0, 0, 0); background-color: red; border-radius: 1.5px;" 
+      <td><a style="color:black; background-color: red; border-radius: 1.5px;" 
         type="submit" class="btn btn-sm text-white btn-danger"  name="lecturerID" (click)="deleteLecturer(lecturers.lec_id)"  >Delete</a>
       </td>
     </tr>
