@@ -1,8 +1,4 @@
 <style>
-  
-
-
-
   h1 img{
      background-repeat: no-repeat;
      float: left;
@@ -10,30 +6,26 @@
      display: grid;
      margin-top: 15px;
      padding-right: 0px;
-     margin-left: 0px;
+     padding-left: 10px;
      filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
      text-shadow: 2px 2px 4px #fbfbfb;
    }
-   h1{
-     line-height: 450%;
-     background-color: black;
-     font-family: 'Arial Narrow Bold', sans-serif;
-     font-weight: 100px;
-     color: white;
-     overflow: fixed;
-     margin-top: 15px;
-   }
-  
-  h1 nav{
-     float: right;
-     margin-top: 15px;
-     color: grey;
-     font-size: 18px;
-     list-style: none;
-     margin-left: 800px;
-     width:100%
-     
-   }
+  h1{
+    line-height: 400%;
+    background-color: black;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    color: white;
+    overflow: fixed;
+    margin-top: 15px;
+  }
+ 
+ nav{
+    float: right;
+    list-style: none;
+    font-size: 16px;
+    margin-right: 10px;
+  }
   h3{
      font-family: "Roboto", sans-serif;
      font-weight: 100px;
@@ -49,28 +41,32 @@
      margin-left: 0px;
      margin-top: 0px;
    }
+   h5{
+     text-align: center;
+     font-size: 2em;
+     font-family: "Roboto", sans-serif;;
+   }
    .covid{
-     text-align: center;
-     border-radius: 50%;
-   }
-   .about{
-     text-align: center;
-     margin-bottom: 0px;
-   }
-   a{
-     color: white;
-     text-decoration: none;
-     padding: 0px;
-     margin-top: 0px;
-     font-family: "Roboto", sans-serif;
- 
-   }
-   nav a{
-     height: 100px;
-     padding-right: 0px;
-     margin-left: 0px;
-     
-   }
+    text-align: center;
+    border-radius: 50%;
+  }
+  .about{
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+    padding: 0px;
+    margin-top: 0px;
+    font-family: "Roboto", sans-serif;
+    
+
+  }
+  nav a{
+    padding: 6px;
+    
+  }
    nav a:hover{
      border: 1px solid white;
      color: red;
@@ -98,6 +94,7 @@
      margin-left: 350px;
      margin-right: 350px;
    }
+<<<<<<< HEAD
    .table td a{
      color: black;
      background-color: red;
@@ -113,40 +110,59 @@
      font-size: 14px;
      padding: 1.5px;
      box-sizing: border-box;
+=======
+   .table{
+     
+     border-collapse: collapse;
+     font-size: 0.9em;
+     min-width: 400px;
+     border-radius: 5px 5px 0 0;
+     overflow: hidden;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
    }
+   .table thead tr{
+     background-color: rgb(155, 155, 113);
+     color: white;
+     font-weight: bold;
+   }
+   .table th,
+   .table td{
+     padding: 12px 15px;
+   }
+   .table tbody tr{
+     border-bottom: 1px solid #dddddd;
+   }
+   .table tbody tr:nth-of-type(even){
+     background-color: #f3f3f3;
+   }
+   .table tbody tr:last-of-type(even){
+     border-bottom: 2px solid rgb(155, 155, 113);
+>>>>>>> 8e2f56cf186cd74334cf147f1cf0d2a09dea4f9a
+   }
+
  </style>
 
-
-
-
-
-
-<nav>
-  <h1 *ngFor="let Details of detail">
+  <header>  
+    <h1 *ngFor="let details of detail">
     <img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
-      WELCOME {{this.Details.stu_name}} {{this.Details.stud_surname}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
-      <a   routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-      <a   routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-      <a   routerLink="/profile" routerLinkActive="active">Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-      <button type="button" (click)="onClick()">Logout</button>
-  </h1>
-  </nav>
+      {{this.details.stu_name}} {{this.details.stud_surname}}  
+  <nav>
+      <a routerLink="/home" routerLinkActive="active">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a routerLink="/lab-booking" routerLinkActive="active">Lab Booking</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a routerLink="/profile" routerLinkActive="active">Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <button id="btn" type="button" (click)="onClick()">Logout</button>
+</nav>
+</h1>
+</header>
 
+<h5>Booking Details</h5>
 
-
-
-
-  <header>
-    <h5 style="text-align: center; font-size: 2em;">Booking Details</h5>
-  </header>
  <label>
-  <span>Number of Bookings: {{this.Num_Bookings}}</span>&nbsp;
+  <h4 style="text-align: center;">Number of Bookings: {{this.Num_Bookings}}</h4>&nbsp;
  </label>
   
  <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
-  <table class="table">
+  <table class="table" align="center">
     <thead>
     <tr>
       <th>Booking ID</th>&nbsp;
@@ -165,8 +181,7 @@
       <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
       <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
       
-      <td><a  class="cancel" 
-        type="submit" class="btn btn-sm text-white btn-danger"  name="bookingID" (click)="onDelete(bookings.Stud_ID)"  >Cancel Booking</a> </td>
+      <td><a style="color: white; " type="Number" class="btn btn-sm text-white btn-danger"  name="bookingID" (click)="onDelete(bookings.Booking_ID)"  >Cancel Booking</a> </td>
       <td><span></span></td>&nbsp;
       
     </tr>
@@ -180,7 +195,7 @@
   <footer>
     <br>
     <div class="covid">
-      <a href="https://sacoronavirus.co.za/"><img style = " border-radius: 2%;"alt="SACoronavirus Resource and News Portal" width="60%" height="80"
+      <a href="https://sacoronavirus.co.za/"><img style = " border-radius: 15px;"alt="SACoronavirus Resource and News Portal" width="30%" height="80"
         src="/assets/images/SACoronavirus.png"></a>
     </div>
     <br>
@@ -197,4 +212,4 @@
         </h4>
       
   </footer>
-</div> 
+</div>

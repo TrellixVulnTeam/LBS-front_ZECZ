@@ -8,10 +8,11 @@ import Swal from 'sweetalert2';
 //Retrieving student details from the database
 export class Details{
   constructor(
-    public stud_no: string,
-    public stu_name: string,
-    public stud_surname: string,
-    public email: string,
+    public lec_id: string,
+    public lec_name: string,
+    public lec_surname: string,
+    public lec_email: string,
+    
   ){}
 }
 
@@ -37,7 +38,7 @@ export class LectureProfileComponent implements OnInit {
   ngOnInit(): void {
     this.tittle = localStorage.getItem("token");
     this.getDetails();
-    this.studentNo = this.student[0].stud_no;
+    this.studentNo = this.student[0].lec_id;
     console.log(this.studentNo);
   }
 
@@ -66,7 +67,7 @@ export class LectureProfileComponent implements OnInit {
         if(result.isConfirmed)
         {
           //Retrieve information from the database
-          this.http.post('http://localhost:3000/updatePassword',data,{responseType:'text'})
+          this.http.post('http://localhost:3000/lec_updatePassword',data,{responseType:'text'})
           .subscribe((result) =>{
 
             if (result =="password successfully updated") {
@@ -81,7 +82,7 @@ export class LectureProfileComponent implements OnInit {
 
               )
               //Navigate to the profile page
-              this.router.navigate(['/profile']);
+              this.router.navigate(['/lec_profile']);
             }else{
 
               Swal.fire(
