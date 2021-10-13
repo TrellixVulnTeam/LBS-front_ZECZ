@@ -26,9 +26,6 @@ h1 img{
     font-size: 16px;
     margin-right: 10px;
   }
-  h3{
-     text-align: center;
-   }
    h4{
      font-family: "Roboto", sans-serif;
      text-align: center;
@@ -83,25 +80,43 @@ h1 img{
    }
    p{
      font-family: Verdana, Geneva, Tahoma, sans-serif;
-     margin-left: 350px;
-     margin-right: 350px;
+     margin-left: 10px;
+     
    }
    form{
      border-top: 1px;
      border-style: solid grey 0.5px;
+     
    }
-   .password{
-     color: black;
-     font-family: fantasy;
+   .container{
+     display: flex;
+     background-color:bisque;
+     align-content: center;
+     justify-content: center;
+   }
+   .container div{
+    background-color:burlywood;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    padding-left: 200px;
+    width: 500px;
    }
    .info{
-      color: black;
-     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-family: -apple-system, 'Open Sans', 'Helvetica Neue', sans-serif;
    }
    form input{
      border-bottom: 2px solid black;
      border-radius: 12px;
      padding: 5px;
+   }
+   #profile{
+     margin-top: 30px;
+     margin-left: 420px;
+   }
+   h2{
+    margin-left: 400px;
+    font-family: fantasy;
    }
  </style>
 
@@ -118,10 +133,11 @@ h1 img{
 </h1>
 </header>
 
-
-<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
+<img id="profile" src="assets/images/profile picture icon.png" alt="" width="130" height="90">
+<h2>User Information</h2>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
  
-  <div class="details">
+  <div class="container">
     <div *ngFor="let details of student">
       
     <h3  *ngFor="let details of student" for="stuNumber" name="stuNumber" ngModel="{{this.details.stud_no}}">
@@ -138,7 +154,7 @@ h1 img{
         {{this.details.email}}</label>&nbsp;&nbsp;<br><br>
       </h3>
     </div>
-  </div>
+
   <div class="password">
     <p>Change your password here</p>
     <label for="password">Old Password</label><br>
@@ -153,6 +169,7 @@ h1 img{
     <br><br><br>
     <button id="btn" type="submit">Update</button>
   </div>
+</div>
 </form>
 
 <br>
