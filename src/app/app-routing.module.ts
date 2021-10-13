@@ -17,24 +17,25 @@ import { LectureLabBookingsComponent } from './lecture-lab-bookings/lecture-lab-
 import { LectureProfileComponent } from './lecture-profile/lecture-profile.component';
 import { ViewScheduleComponent } from './view-schedule/view-schedule.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'index', component: IndexComponent},
-  {path: 'lab-booking', component: LabBookingComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'booking-details', component: BookingDetailsComponent},
-  {path: 'view-user', component: ViewUserComponent},
-  {path: 'admin', component: AdminComponent},
-  {path: 'schedule', component: ScheduleComponent},
-  {path: 'lecture-booking-details', component: LectureBookingDetailsComponent},
-  {path: 'lecture-home', component: LectureHomeComponent},
-  {path: 'lecture-lab-bookings', component: LectureLabBookingsComponent},
-  {path: 'lecture-profile', component: LectureProfileComponent},
-  {path: 'view-schedule', component: ViewScheduleComponent},
+  {path: 'lab-booking', component: LabBookingComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'booking-details', component: BookingDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'view-user', component: ViewUserComponent, canActivate: [AuthGuard]},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+  {path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard]},
+  {path: 'lecture-booking-details', component: LectureBookingDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'lecture-home', component: LectureHomeComponent, canActivate: [AuthGuard]},
+  {path: 'lecture-lab-bookings', component: LectureLabBookingsComponent, canActivate: [AuthGuard]},
+  {path: 'lecture-profile', component: LectureProfileComponent, canActivate: [AuthGuard]},
+  {path: 'view-schedule', component: ViewScheduleComponent, canActivate: [AuthGuard]},
 
 ];
 

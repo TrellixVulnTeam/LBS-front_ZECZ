@@ -28,6 +28,7 @@ import { LectureProfileComponent } from './lecture-profile/lecture-profile.compo
 import { LectureHomeComponent } from './lecture-home/lecture-home.component';
 import { ViewScheduleComponent } from './view-schedule/view-schedule.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -83,7 +84,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
       {path: '', redirectTo: '/index', pathMatch: 'full'},
     ]),
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
