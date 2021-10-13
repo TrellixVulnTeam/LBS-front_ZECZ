@@ -1,12 +1,12 @@
 <app-admin></app-admin>
 <header>
-  <h1>View Bookings</h1>
+  <h1>View Schedule</h1>
 </header>
 
  <!--Search bar-->
 <input type="text" name="search-box" class="search-box"  (keyup)="sendData($event)">
   <section class="search-results" button="Search">
-      <p>Search bookings</p>
+      <p>Search schedule </p>
 
     
   </section>
@@ -14,21 +14,32 @@
     <table class="table">
       <thead>
       <tr>
-        <th>Student Number</th>&nbsp;
-        <th>Booking ID</th>&nbsp;
+        <th>Lab ID</th>&nbsp;
         <th>Lab Name</th>&nbsp;
         <th>Lab Slot</th>&nbsp;
-        <th>Date</th>&nbsp;   
+        <th>Lab Capacity</th>&nbsp;
+        <th>Lab Bookings</th>&nbsp;
+        <th>Lab Time</th>&nbsp;
+        <th>Lab Date</th>&nbsp;
+        <th>Lab Description</th>&nbsp;
+        <th>Lab Assignment</th>&nbsp;
+
+           
         
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let bookings of view">
-        <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
-        <td><span>{{bookings.Booking_ID}}</span></td>&nbsp;
-        <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
-        <td><span>{{bookings.Lab_Slot}}</span></td>&nbsp;
-        <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
+      <tr *ngFor="let Schedule of view; let j = index">
+        <td><span>{{Schedule.Lab_ID}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_Name}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_Slot}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_Capacity}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_availability }}</span></td>&nbsp;
+        <td><span>{{Schedule.time}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_Date.substr(0,10)}}</span></td>&nbsp;
+        <td><span>{{Schedule.descr}}</span></td>&nbsp;
+        <td><span>{{Schedule.users}}</span></td>&nbsp;
+        <td><a  style ="background-color: red; border-radius: 15%; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(44, 39, 39); "type="submit" class="btn btn-sm text-white btn-danger"  name="Lab_ID" (click)="delete(Schedule.Lab_ID)"  >Delete</a> </td>
         
         <td><span></span></td>&nbsp;
         

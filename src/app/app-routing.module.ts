@@ -15,6 +15,7 @@ import { LectureBookingDetailsComponent } from './lecture-booking-details/lectur
 import { LectureHomeComponent } from './lecture-home/lecture-home.component';
 import { LectureLabBookingsComponent } from './lecture-lab-bookings/lecture-lab-bookings.component';
 import { LectureProfileComponent } from './lecture-profile/lecture-profile.component';
+import { ViewScheduleComponent } from './view-schedule/view-schedule.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'lecture-home', component: LectureHomeComponent},
   {path: 'lecture-lab-bookings', component: LectureLabBookingsComponent},
   {path: 'lecture-profile', component: LectureProfileComponent},
+  {path: 'view-schedule', component: ViewScheduleComponent},
 
 ];
 

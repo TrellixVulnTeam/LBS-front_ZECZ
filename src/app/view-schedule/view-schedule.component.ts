@@ -10,15 +10,17 @@ import Swal from 'sweetalert2';
 
 
 
-export class bookings {
+export class Schedule {
   constructor(
-    public Booking_ID: string,
+    public Lab_ID: string,
     public Lab_Name: string,
     public Lab_Slot: string,
-    public Num_Bookings: string,
-    public Stud_ID: string,
-    public date: string,
-   
+    public Lab_Capacity: string,
+    public Lab_availability: string,
+    public Lab_Date: string,
+    public time: string,
+    public descr: string,
+    public users: string,
   ) {
   }
 }
@@ -51,7 +53,7 @@ export class ViewScheduleComponent implements OnInit {
   //variable to store the token
   tittle: string;
   //array to store the data from the database
-  view:bookings[];
+  view:Schedule[];
  //array to store the data from the localstorage
  detail: Details[];
  //variable to store the student Number
@@ -71,7 +73,7 @@ export class ViewScheduleComponent implements OnInit {
     //get Detail funtion that store the data from local storage to the detail array
     //and connects to booking API
     getDetails(){
-      this.http.get<any>('http://localhost:3000/bookings')
+      this.http.get<any>('http://localhost:3000/view-schedule')
     .subscribe(response => {
 
       this.view = response;
@@ -82,22 +84,15 @@ export class ViewScheduleComponent implements OnInit {
 
     //on submit function that calls the booking detail API
     onSubmit(data){
-      //Retrieve information from the database
-      this.http.post('http://localhost:3000/bookings',data,{responseType:'text'})
-      .subscribe((result) =>{
-        this.view= JSON.parse(result);
-        console.warn("Results", result);
-        //this.booking = result;
-      });
-      //API for number of bookings
-      this.http.post('http://localhost:3000/bookingsNum',data,{responseType:'text'})
-      .subscribe((result) =>{
-        //this.Num_Bookings = JSON.stringify(result);
-        this.Num_Bookings = result;
-        console.log(this.Num_Bookings);
-      });
-      console.warn(data);
+      
     }
+   
+    delete(data){
+
+      console.warn(data);
+
+    }
+
 
 
     //On click function for logout
@@ -105,7 +100,7 @@ export class ViewScheduleComponent implements OnInit {
       {
         
         localStorage.removeItem("token");
-        this.router.navigate(['/index']);
+        this.router.navigate(['/view-schedule']);
       }
 
 }
