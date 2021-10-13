@@ -1,1 +1,66 @@
-<p>view-schedule works!</p>
+<app-admin></app-admin>
+<header>
+  <h1>View Schedule</h1>
+</header>
+
+ <!--Search bar-->
+<input type="text" name="search-box" class="search-box"  (keyup)="sendData($event)">
+  <section class="search-results" button="Search">
+      <p>Search schedule </p>
+
+    
+  </section>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Lab ID</th>&nbsp;
+        <th>Lab Name</th>&nbsp;
+        <th>Lab Slot</th>&nbsp;
+        <th>Lab Capacity</th>&nbsp;
+        <th>Lab Bookings</th>&nbsp;
+        <th>Lab Time</th>&nbsp;
+        <th>Lab Date</th>&nbsp;
+        <th>Lab Description</th>&nbsp;
+        <th>Lab Assignment</th>&nbsp;
+
+           
+        
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let Schedule of view; let j = index">
+        <td><span>{{Schedule.Lab_ID}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_Name}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_Slot}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_Capacity}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_availability }}</span></td>&nbsp;
+        <td><span>{{Schedule.time}}</span></td>&nbsp;
+        <td><span>{{Schedule.Lab_Date.substr(0,10)}}</span></td>&nbsp;
+        <td><span>{{Schedule.descr}}</span></td>&nbsp;
+        <td><span>{{Schedule.users}}</span></td>&nbsp;
+        <td><a  style ="background-color: red; border-radius: 15%; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(44, 39, 39); "type="submit" class="btn btn-sm text-white btn-danger"  name="Lab_ID" (click)="delete(Schedule.Lab_ID)"  >Delete</a> </td>
+        
+        <td><span></span></td>&nbsp;
+        
+      </tr>
+      </tbody>
+    </table>
+    <br>
+<div id ="footer">
+  <footer>
+    <a class="contact" href="">contact Us</a><br><br>
+    <a class="about" href="">About</a>
+          <div class="footer-widget social-widget">
+              <h4>Follow Us</h4>
+              <ul class="social-icons">
+                  <li><a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a></li>
+                  <li><a class="twitter" href="https://twitter.com/official_tut">Twitter</a></li>
+                  <li><a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a></li>
+              </ul>
+          </div>
+           <a href="https://sacoronavirus.co.za/"><img alt="SACoronavirus Resource and News Portal" width="400" height="80" src="/assets/images/SACoronavirus.png"></a>
+  </footer>
+</div>
+
+
