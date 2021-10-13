@@ -1,6 +1,13 @@
-<app-admin></app-admin>
 <header>
   <h1>View Schedule</h1>
+  <nav>
+    <a routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="/view-user" routerLinkActive="active">View User</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="/view-schedule" routerLinkActive="active">View Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <button id="btn" type="button" (click)="onClick()">Logout</button>&nbsp;&nbsp;
+   
+  </nav>
 </header>
 
  <!--Search bar-->

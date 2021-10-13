@@ -38,9 +38,17 @@
 
 
 </style>
-<app-admin></app-admin>
-
-Registered Students
+<header>
+  <h1>Registered Students</h1>
+  <nav>
+    <a routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="/schedule" routerLinkActive="active">Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="/view-schedule" routerLinkActive="active">View Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <button id="btn" type="button" (click)="onClick()">Logout</button>&nbsp;&nbsp;
+   
+  </nav>
+</header>
 
 
 <!--table to display all registered students-->

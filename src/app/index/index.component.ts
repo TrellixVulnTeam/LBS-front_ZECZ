@@ -21,6 +21,10 @@ export class IndexComponent implements OnInit {
     //navigate to the login page
     this.router.navigate(['/login']);
   }
+  updates(){
+    //navigate to the notification page
+    this.router.navigate(['/notifications']);
+  }
   //image slider
   imageObject: Array<object> = [{
       thumbImage: 'assets/images/LBS6.jpg',

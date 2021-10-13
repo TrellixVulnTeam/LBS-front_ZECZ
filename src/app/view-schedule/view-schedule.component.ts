@@ -100,7 +100,7 @@ export class ViewScheduleComponent implements OnInit {
       {
         
         localStorage.removeItem("token");
-        this.router.navigate(['/view-schedule']);
+        this.router.navigate(['/index']);
       }
 
 }

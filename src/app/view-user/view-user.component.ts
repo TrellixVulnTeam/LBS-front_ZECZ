@@ -43,6 +43,7 @@ export class ViewUserComponent implements OnInit {
     this.getLecturer();
     
   }
+  //On click function for logout
   onClick()
   {
     

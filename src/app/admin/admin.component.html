@@ -5,12 +5,37 @@
     <a routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a routerLink="/schedule" routerLinkActive="active">Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a routerLink="/view-schedule" routerLinkActive="active">View Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-
-
-    <button type="button" routerLink="/admin" >Refresh</button>
-    <button type="button" routerLink="/index" >Logout</button>
+    <button id="btn" type="button" (click)="onClick()">Logout</button>&nbsp;&nbsp;
    
 </nav>
 
-<!--<p>admin works!</p>
-<a   routerLink="/schedule" routerLinkActive="active">Home</a>-->
+
+<form #userPost="ngForm"  style="text-align: center;">
+    <table class="table">
+      <thead>
+        <th>Student id</th>&nbsp;
+        <th>Name</th>&nbsp;
+        <th>Surname</th>&nbsp;
+        <th>Email</th>&nbsp;
+        <th></th>
+      
+      </thead>
+      
+       <tbody>
+        <tr>           
+          <td><span></span></td>&nbsp;
+          <td><span></span></td>&nbsp;
+          <td><span></span></td>&nbsp;
+          <td><span></span></td>&nbsp;
+          <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="">Delete</a> </td>
+        </tr>
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+        <textarea placeholder="Publish updates"> 
+
+        </textarea><br>
+        <button type="submit">Send Notification</button> 
+    </form>
