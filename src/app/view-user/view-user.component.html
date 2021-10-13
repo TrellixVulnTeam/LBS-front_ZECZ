@@ -7,45 +7,39 @@
     .table td a{
      color: black;
      background-color: red;
-     border-radius: 1.5px;
+     border-radius: 5px;
+     font-size: 14px;
+     padding: 1.5px;
+     box-sizing: border-box;
    }.table td a:hover{
      color: wheat;
      background-color: darkred;
-     border-radius: 1.5px;
+     border-radius: 5px;
+     font-size: 14px;
+     padding: 1.5px;
+     box-sizing: border-box;
    }
    .table2 td a{
-     color: black;
-     background-color: red;
-     border-radius: 1.5px;
+     color: rgb(70, 70, 70);
+     background-color: rgb(246, 0, 0);
+     border-radius: 5px;
+     font-size: 14px;
+     padding: 1.5px;
+     box-sizing: border-box;
    }
    .table2 td a:hover{
      color: wheat;
      background-color: darkred;
-     border-radius: 1.5px;
+     border-radius: 5px;
+     font-size: 14px;
+     padding: 1.5px;
+     box-sizing: border-box;
    }
 
 
 </style>
 <app-admin></app-admin>
-<!--<nav>
-    <a   routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|
-    <a   routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|
-    <a   routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;
-    
-  </nav>-->
 
-<!--<header>
-  <h1>
-    Users
-  </h1>
-</header>
-<nav>
-  <a   routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a   routerLink="/schedule" routerLinkActive="active">schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <button type="button" (click)="onClick()">Logout</button>
-</nav>
-<br>
-<br>-->
 Registered Students
 
 
@@ -96,8 +90,9 @@ Registered Lecturer
       <td><span>{{lecturers.lec_id}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_name}}</span></td>&nbsp;
       <td><span>{{lecturers.lec_email}}</span></td>&nbsp;
-      <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="lecturerID" (click)="deleteLecturer(lecturers.lec_id)"  >Delete</a>
+      <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="lecturerID" (click)="deleteLecturer(lecturers.lec_id)"  > Delete </a>
       </td>
+            
     </tr>
 
    </tbody>
