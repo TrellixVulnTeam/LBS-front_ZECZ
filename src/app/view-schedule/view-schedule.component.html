@@ -4,7 +4,7 @@
     <a routerLink="/admin" routerLinkActive="active">Admin</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a routerLink="/view-user" routerLinkActive="active">View User</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a routerLink="/view-schedule" routerLinkActive="active">View Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="/schedule" routerLinkActive="active">Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <button id="btn" type="button" (click)="onClick()">Logout</button>&nbsp;&nbsp;
    
   </nav>
@@ -25,11 +25,12 @@
         <th>Lab Name</th>&nbsp;
         <th>Lab Slot</th>&nbsp;
         <th>Lab Capacity</th>&nbsp;
-        <th>Lab Bookings</th>&nbsp;
+        <th>Bookings</th>&nbsp;
         <th>Lab Time</th>&nbsp;
         <th>Lab Date</th>&nbsp;
         <th>Lab Description</th>&nbsp;
         <th>Lab Assignment</th>&nbsp;
+        <th>Lab Status</th>&nbsp;
 
            
         
@@ -46,7 +47,8 @@
         <td><span>{{Schedule.Lab_Date.substr(0,10)}}</span></td>&nbsp;
         <td><span>{{Schedule.descr}}</span></td>&nbsp;
         <td><span>{{Schedule.users}}</span></td>&nbsp;
-        <td><a  style ="background-color: red; border-radius: 15%; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(44, 39, 39); "type="submit" class="btn btn-sm text-white btn-danger"  name="Lab_ID" (click)="delete(Schedule.Lab_ID)"  >Delete</a> </td>
+        <td><span>{{Schedule.status}}</span></td>&nbsp;
+        <td><a  style ="background-color: red; border-radius: 15%; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:white; "type="submit" class="btn btn-sm text-white btn-danger"  name="Lab_ID" (click)="delete(Schedule.Lab_ID)"  >Cancel Schedule</a> </td>
         
         <td><span></span></td>&nbsp;
         

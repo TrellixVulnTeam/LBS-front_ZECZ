@@ -173,8 +173,9 @@
         <th>Booking ID</th>&nbsp;
         <th>Lab Name</th>&nbsp;
         <th>Lab Slot</th>&nbsp;
-        <th>Student Number</th>&nbsp;
-        <th>Date</th>&nbsp;   
+        <th>Lecture Number</th>&nbsp;
+        <th>Date</th>&nbsp; 
+        <th></th> &nbsp;&nbsp;
         
       </tr>
       </thead>
@@ -183,11 +184,11 @@
         <td><span>{{bookings.Booking_ID}}</span></td>&nbsp;
         <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
         <td><span>{{bookings.Lab_Slot}}</span></td>&nbsp;
-        <td><span>{{bookings.Stud_ID}}</span></td>&nbsp;
+        <td><span>{{bookings.User_ID}}</span></td>&nbsp;
         <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
         
-        <td><a style="color: red;" type="Number" class="btn btn-sm text-white btn-danger"  name="bookingID" (click)="onDelete(bookings.Booking_ID)"  >Cancel Booking</a> </td>
-        <td><span></span></td>&nbsp;
+        <td><a style="color: white;" type="Number" class="btn btn-sm text-white btn-danger"  name="bookingID" (click)="onDelete(bookings.Booking_ID)"  >Cancel Booking</a> </td>
+        <td><span></span></td>
         
       </tr>
       </tbody>

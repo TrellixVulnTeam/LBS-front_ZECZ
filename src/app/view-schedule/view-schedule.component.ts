@@ -21,6 +21,7 @@ export class Schedule {
     public time: string,
     public descr: string,
     public users: string,
+    public status: string,
   ) {
   }
 }
@@ -33,6 +34,7 @@ export class Details{
     public Lab_Name: string,
     public Num_Bookings: string,
     public date: string,
+    
     
   ){}
 }
@@ -89,11 +91,37 @@ export class ViewScheduleComponent implements OnInit {
    
     delete(data){
 
-      console.warn(data);
+      var jsonPerson = '{"Lab_ID":'+ data +'}';
+      var personObject = JSON.parse(jsonPerson);
 
-    }
+      console.warn(data +'/updateLabStatus');
+
+      this.http.post('http://localhost:3000/updateLabStatus',personObject, {responseType: 'text'})
+      .subscribe((result)=>{
+      console.warn("result",result)
+      if(result =="Schedule cancelled")
+      {
+        Swal.fire(
+         
+          'Schedule cancelled',
+          '',
+          'success'
+        )
+        
+      }else
+      {
 
 
+        Swal.fire(
+          result,
+          '',
+          'warning'
+        )
+       
+      }
+    })
+
+  }
 
     //On click function for logout
       onClick()

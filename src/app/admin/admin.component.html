@@ -23,7 +23,9 @@
         <tr *ngFor="let notifications of notification; let j = index">           
           <td><span>{{notifications.Notification_Date.substr(0,10)}}</span></td>&nbsp; 
           <td><span>{{notifications.Notification}}</span></td>&nbsp;
-          <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="Notification" (click)="delete(notifications.Notification_ID)" >Delete</a> </td>
+         
+          <td><a  type= "submit" style ="background-color: red; border-radius: 15%; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:white; "type="submit" class="btn btn-sm text-white btn-danger"  name="Notification"  (click)="delete(notifications.Notification_ID)"  >Remove Notification</a> </td>
+        
         </tr>
         <tr>
 

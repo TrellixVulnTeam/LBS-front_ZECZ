@@ -84,7 +84,7 @@ notification: notifications[];
             if(result == 'Notification successfully deleted')
             {
               Swal.fire(
-                'user has been successfuly deleted',
+                'Notification successfully deleted',
                 '',
                 'success'
               )
