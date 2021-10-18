@@ -1,17 +1,142 @@
 
-<h1>Welcome to Admin Portal</h1>
-<nav>
-    <a routerLink="/view-user" routerLinkActive="active">View User</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a routerLink="/schedule" routerLinkActive="active">Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a routerLink="/view-schedule" routerLinkActive="active">View Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <button id="btn" type="button" (click)="onClick()">Logout</button>&nbsp;&nbsp;
-   
-</nav>
+<style>
+  
+  h1 img{
+     background-repeat: no-repeat;
+     float: left;
+     position: inherit;
+     display: grid;
+     margin-top: 15px;
+     padding-right: 0px;
+     padding-left: 10px;
+     filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+     text-shadow: 2px 2px 4px #fbfbfb;
+   }
+  h1{
+    line-height: 400%;
+    background-color: black;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    color: white;
+    overflow: fixed;
+    margin-top: 15px;
+  }
+ 
+ nav{
+    float: right;
+    list-style: none;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+ h3{
+    font-family: "Roboto", sans-serif;
+    font-weight: 100px;
+    font-size: 16px;
+    color: white;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-left: 200px;
+  }
+  h4{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .covid{
+    text-align: center;
+    border-radius: 50%;
+  }
+  .about{
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+    padding: 0px;
+    margin-top: 0px;
+    font-family: "Roboto", sans-serif;
+    
 
+  }
+  nav a{
+    padding: 6px;
+    
+    
+  }
+  nav a:hover{
+    border: 1px solid white;
+    color: red;
+    }
+    nav a:active{
+      border: 1px solid white;
+    }
+    #footer{
+    background-color: grey;
+      background-size: cover;
+    }
+    #btn{
+      font-family: "Roboto", sans-serif;
+      border-radius: 15px;
+      padding: 5px 7px 5px 7px;
+      color: orangered;
+      background-color: white;
+    }
+    #btn:hover{
+      background-color: black;
+      color: white;
+    }
+    .table{
+     
+     border-collapse: collapse;
+     font-size: 0.9em;
+     min-width: 400px;
+     border-radius: 5px 5px 0 0;
+     overflow: hidden;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+   }
+   .table thead tr{
+     background-color: rgb(155, 155, 113);
+     color: white;
+     font-weight: bold;
+   }
+   .table th,
+   .table td{
+     padding: 12px 15px;
+     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   }
+   .table tbody td{
+       text-align: center;
+   }
+   .table tbody tr{
+     border-bottom: 1px solid #dddddd;
+   }
+   .table tbody tr:nth-of-type(even){
+     background-color: #d3d3d3;
+   }
+   .table tbody tr:last-of-type(even){
+     border-bottom: 2px solid rgb(155, 155, 113);
+   }
+  </style>
+
+
+<header>  
+  <h1>
+  <img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
+    Admin
+    <nav>
+        <a routerLink="/view-user" routerLinkActive="active">View User</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a routerLink="/view-bookings" routerLinkActive="active">View Bookings</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a routerLink="/schedule" routerLinkActive="active">Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a routerLink="/view-schedule" routerLinkActive="active">View Schedule</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <button id="btn" type="button" (click)="onClick()">Logout</button>&nbsp;&nbsp;
+    </nav>
+  </h1>
+</header>
 <br><br>
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
-    <table class="table">
+    <table class="table" align="center">
       <thead>
         <th>Notification Date</th>&nbsp;
         <th>Notification Message</th>&nbsp;
@@ -32,9 +157,36 @@
         </tr>
       </tbody>
     </table>
-        <textarea  type= "text" name="Notification"   ngModel="Notification"> 
+    <br><br>
+        <textarea cols="38" rows="16" type= "text" name="Notification"   ngModel="Notification"> 
            
         </textarea><br>
       
         <button type="submit">Send Notification</button> 
     </form>
+
+    <br><br><br><br>
+    <div id="footer">
+      <footer>
+        <br>
+        <div class="covid">
+          <a href="https://sacoronavirus.co.za/"><img style = " border-radius: 15px;"alt="SACoronavirus Resource and News Portal" width="30%" height="80"
+            src="/assets/images/SACoronavirus.png"></a>
+        </div>
+        <br>
+        <div class="about">
+        <h4>
+          <a class="contact" href="">contact Us</a><br><br>
+          <a class="about" href="">About</a>
+        </h4>
+        </div> 
+            <h4>Follow Us<br><br>
+              <a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a><br><br>
+              <a class="twitter" href="https://twitter.com/official_tut">Twitter</a><br><br>
+              <a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a><br><br>
+            </h4>
+          
+      </footer>
+    </div>
+
+
