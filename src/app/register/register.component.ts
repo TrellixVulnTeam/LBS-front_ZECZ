@@ -89,7 +89,7 @@ export class RegisterComponent {
   
               
             })
-            //Navigate to the Login page
+            //Navigate to the Login  page
             this.router.navigate(['/login']);
             console.warn(data);
         }
