@@ -16,6 +16,7 @@ export class Lecturers {
   constructor(
     public lec_id: string,
     public lec_name: string,
+    public lec_surname: string,
     public lec_email: string,
   ){}
 }
