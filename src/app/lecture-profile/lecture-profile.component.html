@@ -1,48 +1,32 @@
 <style>
- h1 img{
-     background-repeat: no-repeat;
-     float: left;
-     position: inherit;
-     display: grid;
-     margin-top: 15px;
-     padding-right: 0px;
-     padding-left: 10px;
-     filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
-     text-shadow: 2px 2px 4px #fbfbfb;
-   }
-  h1{
-    line-height: 400%;
-    background-color: black;
-    font-family: 'Arial Narrow Bold', sans-serif;
-    font-weight: 100px;
-    color: white;
-    overflow: fixed;
-    margin-top: 15px;
-  }
- 
- nav{
-    float: right;
-    list-style: none;
-    font-size: 16px;
-    margin-right: 10px;
-  }
-    h3{
-       font-family: "Roboto", sans-serif;
-       font-weight: 100px;
-       font-size: 16px;
-       color: white;
-       margin-top: 0px;
-       padding-top: 0px;
-       margin-left: 200px;
+  h1 img{
+       background-repeat: no-repeat;
+       float: left;
+       position: inherit;
+       display: grid;
+       margin-top: 15px;
+       padding-right: 0px;
+       padding-left: 10px;
+       filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+       text-shadow: 2px 2px 4px #fbfbfb;
      }
+    h1{
+      line-height: 400%;
+      background-color: black;
+      font-family: 'Arial Narrow Bold', sans-serif;
+      font-weight: 100px;
+      color: white;
+      overflow: fixed;
+      margin-top: 15px;
+    }
+   
+   nav{
+      float: right;
+      list-style: none;
+      font-size: 16px;
+      margin-right: 10px;
+    }
      h4{
-       font-family: "Roboto", sans-serif;
-       text-align: center;
-       margin-left: 0px;
-       margin-top: 0px;
-       font-size: 1em;
-     }
-     h5{
        font-family: "Roboto", sans-serif;
        text-align: center;
        margin-left: 0px;
@@ -58,6 +42,7 @@
        text-align: center;
        margin-bottom: 0px;
      }
+     
      a{
        color: white;
        text-decoration: none;
@@ -67,7 +52,9 @@
    
      }
      nav a{
-       padding: 6px; 
+       height: 100px;
+       padding: 6px;
+       
      }
      nav a:hover{
        border: 1px solid white;
@@ -81,38 +68,61 @@
        background-size: cover;
      }
      #btn{
-     font-family: "Roboto", sans-serif;
-     border-radius: 15px;
-     padding: 7px 10px 7px 10px;
-     color: orangered;
-     background-color: white;
-   }
+       font-family: "Roboto", sans-serif;
+       border-radius: 15px;
+       padding: 7px 10px 7px 10px;
+       color: orangered;
+       background-color: white;
+     }
      #btn:hover{
        background-color: black;
        color: white;
      }
      p{
        font-family: Verdana, Geneva, Tahoma, sans-serif;
-       margin-left: 350px;
-       margin-right: 350px;
+       margin-left: 10px;
+       
      }
      form{
-     border-top: 1px;
-     border-style: solid grey 0.5px;
-   }
-   .password{
-     color: black;
-     font-family: fantasy;
-   }
-   .info{
-      color: black;
-     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   }
-   form input{
-     border-bottom: 2px solid black;
-     border-radius: 12px;
-     padding: 5px;
-   }
+       border-top: 1px;
+       border-style: solid grey 0.5px;
+       
+     }
+     .container{
+       display: flex;
+       align-content: center;
+       justify-content: center;
+     }
+     .container div{
+      background-color:burlywood;
+      align-items: center;
+      margin: 20px;
+      padding: 20px;
+      padding-left: 130px;
+      width: 350px;
+     }
+     .info{
+       font-family: -apple-system, 'Open Sans', 'Helvetica Neue', sans-serif;
+     }
+     .password{
+      border-radius: 12px;
+     }
+     .names{
+      border-radius: 12px;
+     }
+     form input{
+       border-bottom: 2px solid black;
+       border-radius: 12px;
+       padding: 5px;
+     }
+     #profile{
+       margin-top: 30px;
+       margin-left: 550px;
+     }
+     h2{
+      margin-left: 530px;
+      font-family: fantasy;
+     }
    </style>
 
   <header>  
@@ -127,44 +137,45 @@
   </nav>
   </h1>
   </header> 
-  
-  
-  <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
-   
-    <div class="details">
-      <div *ngFor="let details of student">
+
+<img id="profile" src="assets/images/profile picture icon.png" alt="" width="130" height="90">
+<h2>User Information</h2>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+ 
+  <div class="container">
+    <div *ngFor="let details of student" class="names">
+      
+    <h3 *ngFor="let details of student" for="lec_id" name="lec_id" ngModel="{{this.details.lec_id}}">
+      <label class="info">Name:
+        {{this.details.lec_name}}</label> &nbsp;&nbsp; <br><br>
+
+        <label class="info">Surname:
+        {{this.details.lec_surname}}</label>&nbsp;&nbsp;<br><br>
+
+        <label class="info">Student Number:
+        {{this.details.lec_id}}</label>&nbsp;&nbsp;<br><br>
         
-      <h5  *ngFor="let details of student" for="lec_id" name="lec_id" ngModel="{{this.details.lec_id}}">
-        <label class="info">Name:
-          {{this.details.lec_name}}</label> &nbsp;&nbsp; <br><br>
-  
-          <label class="info">Surname:
-          {{this.details.lec_surname}}</label>&nbsp;&nbsp;<br><br>
-  
-          <label class="info">Student Number:
-          {{this.details.lec_id}}</label>&nbsp;&nbsp;<br><br>
-          
-         <label class="info">Email: 
-          {{this.details.lec_email}}</label>&nbsp;&nbsp;<br><br>
-        </h5>
-      </div>
+       <label class="info">Email: 
+        {{this.details.lec_email}}</label>&nbsp;&nbsp;<br><br>
+      </h3>
     </div>
-    <div class="password">
-      <p>Change your password here</p>
-      <label for="password">Old Password</label><br>
-      <input type="password" ngModel name="password" ><br><br>
-  
-      <label for="password">Change Password</label><br>
-      <input type="password" ngModel name="newPassword" ><br><br>
-  
-      <label for="password">Confirm new Password</label><br>
-      <input type="password" ngModel name="confirmPassword" >
-  
-      <br><br><br>
-      <button id="btn" type="submit">Update</button>
-    </div>
-  </form>
-  
+
+  <div class="password">
+    <p>Change Password </p>
+    <label for="password">Old Password</label><br>
+    <input type="password" ngModel name="password" ><br><br>
+
+    <label for="password">Change Password</label><br>
+    <input type="password" ngModel name="newPassword" ><br><br>
+
+    <label for="password">Confirm New Password</label><br>
+    <input type="password" ngModel name="confirmPassword" >
+
+    <br><br><br>
+    <button id="btn" type="submit">Update</button>
+  </div>
+</div>
+</form>
   <br>
   
   <br><br><br><br>
