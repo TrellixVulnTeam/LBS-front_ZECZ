@@ -29,6 +29,7 @@ import { LectureHomeComponent } from './lecture-home/lecture-home.component';
 import { ViewScheduleComponent } from './view-schedule/view-schedule.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { AuthGuard } from './auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { AuthGuard } from './auth.guard';
 
       {path: '', redirectTo: '/index', pathMatch: 'full'},
     ]),
+    BrowserAnimationsModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
