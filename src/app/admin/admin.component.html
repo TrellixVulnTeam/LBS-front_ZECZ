@@ -9,33 +9,30 @@
    
 </nav>
 
-
-<form #userPost="ngForm"  style="text-align: center;">
+<br><br>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
     <table class="table">
       <thead>
-        <th>Student id</th>&nbsp;
-        <th>Name</th>&nbsp;
-        <th>Surname</th>&nbsp;
-        <th>Email</th>&nbsp;
-        <th></th>
-      
+        <th>Notification Date</th>&nbsp;
+        <th>Notification Message</th>&nbsp;
+        
+        
       </thead>
       
        <tbody>
-        <tr>           
-          <td><span></span></td>&nbsp;
-          <td><span></span></td>&nbsp;
-          <td><span></span></td>&nbsp;
-          <td><span></span></td>&nbsp;
-          <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="">Delete</a> </td>
+        <tr *ngFor="let notifications of notification; let j = index">           
+          <td><span>{{notifications.Notification_Date.substr(0,10)}}</span></td>&nbsp; 
+          <td><span>{{notifications.Notification}}</span></td>&nbsp;
+          <td><a type="submit" class="btn btn-sm text-white btn-danger"  name="Notification" (click)="delete(notifications.Notification_ID)" >Delete</a> </td>
         </tr>
         <tr>
 
         </tr>
       </tbody>
     </table>
-        <textarea placeholder="Publish updates"> 
-
+        <textarea  type= "text" name="Notification"   ngModel="Notification"> 
+           
         </textarea><br>
+      
         <button type="submit">Send Notification</button> 
     </form>

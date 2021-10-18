@@ -126,14 +126,16 @@
     </thead>
     
      <tbody>
-      <tr>           
-        <td>isdvjsdiosd</td>
-        <td>dssddsdssdds</td>
+      <tr *ngFor="let notifications of notification">            
+        <td><span>{{notifications.Notification_Date.substr(0,10)}}</span></td>
+        <td><span>{{notifications.Notification}}</span></td>
+          
       </tr>
     </tbody>
   </table>
 
   <br><br><br><br>
+  
   
 <div id="footer">
   <footer >
