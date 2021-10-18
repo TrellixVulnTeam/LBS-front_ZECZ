@@ -49,8 +49,7 @@ export class RegisterComponent {
                 '',
                 'success'
               )
-              //Navigate to the Login page
-              this.router.navigate(['/login']);
+              
             }else{
               Swal.fire(
                 result,
@@ -61,6 +60,8 @@ export class RegisterComponent {
 
             
           })
+         //Navigate to the Login page 
+         this.router.navigate(['/login']);
           console.warn(data);
         }
         if(this.answer == 'lecturer')
@@ -77,8 +78,7 @@ export class RegisterComponent {
                   '',
                   'success'
                 )
-                //Navigate to the Login page
-                this.router.navigate(['/login']);
+                
               }else{
                 Swal.fire(
                   result,
@@ -89,6 +89,8 @@ export class RegisterComponent {
   
               
             })
+            //Navigate to the Login page
+            this.router.navigate(['/login']);
             console.warn(data);
         }
         //check if the radio button is clicked
