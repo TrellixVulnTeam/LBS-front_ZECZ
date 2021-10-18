@@ -10,7 +10,7 @@ export class bookings {
     public Lab_Name: string,
     public Lab_Slot: string,
     public Num_Bookings: string,
-    public Stud_ID: string,
+    public User_ID: string,
     public date: string,
    
   ) {

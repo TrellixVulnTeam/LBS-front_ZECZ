@@ -11,7 +11,7 @@
      text-shadow: 2px 2px 4px #fbfbfb;
    }
    h1{
-     line-height: 400%;
+     line-height: 500%;
      background-color: black;
      font-family: 'Arial Narrow Bold', sans-serif;
      font-weight: 100px;
@@ -30,6 +30,7 @@
     text-align: center;
     margin-left: 0px;
     margin-top: 0px;
+    color: white;
   }
   .covid{
     text-align: center;
@@ -39,6 +40,10 @@
     text-align: center;
     margin-bottom: 0px;
   }
+  .slider{
+    margin-top: 0;
+  }
+ 
   a{
      color: white;
      text-decoration: none;
@@ -54,7 +59,7 @@
      border: 1px solid white;
    }
   #footer{
-   background-color: grey;
+   background-color: black;
     background-size: cover;
    
   }
@@ -87,45 +92,61 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 350px;
     margin-right: 350px;
+    color: black;
+    font-size: 1.3em;
   }
+  section{
+      background-image: url(assets/images/background3.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size:cover;
+      margin-top: 0px;
+      z-index: -1;
+      filter: overlay;
+      -webkit-filter: blur();
+    }
 </style>
 
-
+<section>
 <header>  
   <h1><img src="assets/images/LBSdesign1.png" alt="" width="130" height="90">&nbsp;&nbsp;&nbsp;
    Lab Booking System
      <nav> 
-       <a routerLink="/register" routerLinkActive="active">Register / Create Account</a>&nbsp;&nbsp;
-
-       
+       <a routerLink="/register" routerLinkActive="active">Register / Create Account</a>&nbsp;&nbsp;  
    </nav>
  </h1>
 </header>
 
-<div class="slider" id="img-slider">
-  <ng-image-slider [images]="imageObject" [infinite]="true" [autoSlide]="3" [showArrow]="false" [imagePopup]="false"
-    [imageSize]="{height: 380, width:500}" #nav></ng-image-slider>
-</div>
-
-<main>
-  <article>
-    <p>Lab Booking System is a web and mobile based booking application designed conviniently 
-      for student and lectures to teach and study.It allows multiple bookings,change,update and cancel bookings 
-    </p>
-
-  </article>
 
 
-  <div style="text-align: center;">
-    
-    <a id="learnMore" href="https://www.tut.ac.za/news-and-press/news">Learn More</a>
-    <br><br><br><br>
-    <button id="login_btn" type="button" (click)="updates()">Notifications</button>&nbsp;&nbsp;<button id="login_btn" type="button" (click)="onClick()">Login</button><br><br>
+  <div class="slider">
+    <ng-image-slider [images]="imageObject" [infinite]="true" [autoSlide]="1" [showArrow]="false" [imagePopup]="false"
+      [imageSize]="{height: 380, width:500}" #nav></ng-image-slider>
   </div>
 
-</main>
 
-<br><br><br><br>
+    
+
+    <main>
+      <article>
+        <p>Lab Booking System is a web and mobile based booking application designed conviniently 
+          for student and lectures to teach and study.It allows multiple bookings,change,update and cancel bookings 
+        </p>
+
+      </article>
+
+
+      <div style="text-align: center;">
+        
+        <a id="learnMore" href="https://www.tut.ac.za/news-and-press/news">Learn More</a>
+        <br><br><br><br>
+        <button id="login_btn" type="button" (click)="updates()">Notice</button>&nbsp;&nbsp;<button id="login_btn" type="button" (click)="onClick()">Login</button><br><br>
+      </div>
+
+    </main>
+
+  <br><br><br><br>
+  </section>
 <div id="footer">
   <footer >
     <br>

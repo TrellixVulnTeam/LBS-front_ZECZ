@@ -56,29 +56,34 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/index']);
   }
 
-  //Image slider
-    imageObject: Array<object> = [{
-      thumbImage: 'assets/images/LBS6.jpg',
+  //image slider
+  imageObject: Array<object> = [
+    {
+      thumbImage:'assets/images/lab3.jpg',
       text:'Lab booking system group'
     },
     {
-      thumbImage:'assets/images/LBS1.jpg',
+      thumbImage: 'assets/images/lab6.jpeg',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/LBS2.jpg',
+      thumbImage: 'assets/images/lab2.jpg',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/LBS4.jpg',
+      thumbImage: 'assets/images/lab7.jpg',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/LBS3.jpg',
+      thumbImage: 'assets/images/lab1.jpg',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/LBS5.jpg',
+      thumbImage: 'assets/images/lab4.jpg',
+      text:'Lab booking system group'
+    },
+    {
+      thumbImage: 'assets/images/lab5.jpg',
       text:'Lab booking system group'
     },
   ]
