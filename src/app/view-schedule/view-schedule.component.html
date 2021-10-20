@@ -79,7 +79,7 @@
     color: white;
   }
   #delete{
-    color: red;
+    color: white;
     border: 1px solid black;
     background-color: rgb(87, 79, 76);
     border-radius: 12px;
@@ -88,6 +88,7 @@
   }
   #delete:hover{
     background-color: black;
+    color: red;
   }
   .table{
      
@@ -154,6 +155,7 @@
         <th>Lab Description</th>&nbsp;
         <th>Lab Assignment</th>&nbsp;
         <th>Lab Status</th>&nbsp;
+        <th>Cancel</th>&nbsp;
 
            
         
@@ -172,7 +174,7 @@
         <td><span>{{Schedule.descr}}</span></td>&nbsp;
         <td><span>{{Schedule.users}}</span></td>&nbsp;
         <td><span>{{Schedule.status}}</span></td>&nbsp;
-        <td><a  style ="background-color: red; border-radius: 15%; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:white; "type="submit" class="btn btn-sm text-white btn-danger"  name="Lab_ID" (click)="delete(Schedule.Lab_ID)"  >Cancel Schedule</a> </td>
+        <td><a  id="delete" type="submit" name="Lab_ID" (click)="delete(Schedule.Lab_ID)">Cancel Schedule</a></td>
         
         <td><span></span></td>&nbsp;
         
