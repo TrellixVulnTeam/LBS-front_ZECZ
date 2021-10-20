@@ -1,0 +1,171 @@
+h1 img{
+    background-repeat: no-repeat;
+    float: left;
+    position: inherit;
+    display: grid;
+    margin-top: 15px;
+    padding-right: 0px;
+    padding-left: 10px;
+    filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+    text-shadow: 2px 2px 4px #fbfbfb;
+  }
+  h1{
+    line-height: 500%;
+    background-color: black;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    color: white;
+  }
+ 
+ h1 nav{
+    float: right;
+    margin-top: 0px;
+    color: grey;
+    font-size: 18px;
+    list-style: none;
+  }
+ h4{
+   font-family: 'Arial Narrow Bold', sans-serif;
+   text-align: center;
+   margin-left: 0px;
+   margin-top: 0px;
+   color: white;
+ }
+ .covid{
+   text-align: center;
+   border-radius: 50%;
+ }
+ .about{
+   text-align: center;
+   margin-bottom: 0px;
+ }
+ .slider{
+   margin-top: 0;
+ }
+
+ a{
+    color: white;
+    text-decoration: none;
+    padding: 5px 18px;
+    font-family: "Roboto", sans-serif;
+    
+
+  }
+  nav a:hover{
+    border: 1px solid white;
+    color: red;
+  }
+  nav a:active{
+    border: 1px solid white;
+  }
+ #footer{
+  background-color: black;
+   background-size: cover;
+  
+ }
+ #btn{
+   font-family: "Roboto", sans-serif;
+   border-radius: 15px;
+   padding: 5px 7px 5px 7px;
+   color: orangered;
+   background-color: white;
+ }
+ #login_btn{
+   font-family: monospace;
+    border-radius: 15px;
+    padding: 8px 15px 8px 15px;
+    color: black;
+    background-color: white;
+  }
+#login_btn:hover{
+   background-color: black;
+   color: white;
+ }
+#btn:hover{
+   background-color: black;
+   color: white;
+ }
+#learnMore{
+ color: rgb(57, 138, 214);
+ margin-left: 415px;
+}
+#book{
+ margin-left: 100px;
+ font-family:fantasy;
+ color: rgb(247, 247, 247);
+ font-size: 3em;
+ font-weight: 100%;
+ animation:reverse;
+}
+ p{
+   font-family:monospace;
+   width: 50%; 
+   margin-left: 450px;
+   color: rgb(59, 52, 52);
+   
+   
+ }
+ section{
+     background-image: url(../../assets/images/background3.jpg);
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size:cover;
+     margin-top: 0px;
+     z-index: -1;
+     filter: overlay;
+     -webkit-filter: blur();
+     -webkit-backface-visibility: hidden;
+     -webkit-perspective: 1000;
+      -webkit-transform: translate3d(0,0,0);
+  
+   }
+hr{
+ color: rgb(59, 52, 52);
+ width: 50%; 
+ margin-left: 450px;
+
+}
+ 
+ #book {
+ overflow:hidden;
+ padding: 20px;
+ white-space:nowrap;
+}
+#book:first-of-type {    /* For increasing performance 
+                      ID/Class should've been used. 
+                      For a small demo 
+                      it's okaish for now */
+ animation: showup 7s infinite;
+}
+
+#book:last-of-type {
+ width:0px;
+ animation: reveal 7s infinite;
+}
+
+#book2:last-of-type {
+ color: rgb(172, 102, 102);
+ animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+   0% {opacity:0;}
+   20% {opacity:1;}
+   80% {opacity:1;}
+   100% {opacity:0;}
+}
+
+@keyframes slidein {
+   0% { margin-left:-800px; }
+   20% { margin-left:-800px; }
+   35% { margin-left: 50px; }
+   100% { margin-left: -20px; }
+}
+
+@keyframes reveal {
+   0% {opacity:0;width:0px;}
+   20% {opacity:1;width:0px;}
+   30% {width:355px;}
+   80% {opacity:1;}
+   100% {opacity:0;width:355px;}
+}
