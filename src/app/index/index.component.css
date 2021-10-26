@@ -24,11 +24,9 @@ h1 img{
     font-size: 18px;
     list-style: none;
   }
- h4{
-   font-family: 'Arial Narrow Bold', sans-serif;
+ h2{
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    text-align: center;
-   margin-left: 0px;
-   margin-top: 0px;
    color: white;
  }
  .covid{
@@ -42,7 +40,21 @@ h1 img{
  .slider{
    margin-top: 0;
  }
-
+.container{
+  margin-left: 170px;
+  margin-right: 170px;
+}
+.cover{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.cover div{
+ align-items: center;
+ margin: 5px;
+ padding: 70px;
+ 
+}
  a{
     color: white;
     text-decoration: none;
@@ -61,7 +73,6 @@ h1 img{
  #footer{
   background-color: black;
    background-size: cover;
-  
  }
  #btn{
    font-family: "Roboto", sans-serif;
@@ -85,10 +96,13 @@ h1 img{
    background-color: black;
    color: white;
  }
-#learnMore{
- color: rgb(57, 138, 214);
- margin-left: 415px;
-}
+ #learnMore{
+  color: rgb(77, 183, 197);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+ #privacy{
+   color:rgb(163, 163, 163);
+ }
 #book{
  margin-left: 100px;
  font-family:fantasy;
@@ -98,12 +112,9 @@ h1 img{
  animation:reverse;
 }
  p{
-   font-family:monospace;
-   width: 50%; 
-   margin-left: 450px;
-   color: rgb(59, 52, 52);
-   
-   
+   font-family:monospace; 
+   text-align: center;
+   color: rgb(59, 52, 52);  
  }
  section{
      background-image: url(../../assets/images/background3.jpg);
@@ -122,8 +133,6 @@ h1 img{
 hr{
  color: rgb(59, 52, 52);
  width: 50%; 
- margin-left: 450px;
-
 }
  
  #book {

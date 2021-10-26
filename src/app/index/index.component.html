@@ -16,8 +16,9 @@
      
 
       <br><br><br><br>
-      <div style="margin-left: 845px;">
-        <button id="login_btn" type="button" (click)="updates()">Notice</button>&nbsp;&nbsp;<button id="login_btn" type="button" (click)="onClick()">Login</button>
+      <div style="text-align: center;">
+        <button id="login_btn" type="button" (click)="updates()">Notice</button>
+          &nbsp;&nbsp;<button id="login_btn" type="button" (click)="onClick()">Login</button>
       </div>
 
     </main>
@@ -27,30 +28,29 @@
  
 
    <br>
-   <div class="row" style="width: 50%; margin-left: 450px;" >
+  <div class="container">
+
+   
    <h2 style="text-align: center;"> ABOUT THE LAB BOOKING SYSTEM</h2>
    <br>
-   <h3   >The Lab Booking system is an online booking facility that facilitates lab administrators and lecturers to book for computer labs,
+   <h3 style="text-align: center;">The Lab Booking system is an online booking facility that facilitates lab administrators and lecturers to book for computer labs,
      it check conflicts and allows simultaneous bookings, updates of bookings, changes and deletion of bookings.
     The system allows the lab administrators to add labs under their names, edit lab details, delete labs. They may also add lab administrators. 
     The system allows calendar view of all the labs, it gives daily, weekly and monthly views of the calendar</h3>
-    <a id="learnMore" href="https://www.tut.ac.za/news-and-press/news">Learn More</a>
-   </div>
+    <a href="https://www.tut.ac.za/news-and-press/news"><p id="learnMore">Learn More</p></a>
+   
 
+  <br>
+  <h2 style="text-align: center;"> OUR LABS</h2>
 
-
-
-  <br><br><br>
-  <h2 style="text-align: center; margin-right: 50px;"> OUR LABS</h2>
-
-    <div class="slider" id="img-slider" style="text-align: center; width: 54%; margin-left: 410px;">
+    <div class="slider" id="img-slider" style="text-align: center;">
       <ng-image-slider [images]="imageObject" [infinite]="true" [autoSlide]="1" [showArrow]="false" [imagePopup]="false"
          [imageSize]="{height: 200, width:250}" #nav></ng-image-slider>
      </div>
      <br><br><br>
 
 
-
+    </div>
 <div id="footer">
   <footer >
     <br>
@@ -59,20 +59,22 @@
         src="/assets/images/SACoronavirus.png"></a>
     </div>
     <br>
-    <div class="about">
-    <h4></h4>
-      <a class="contact" href="">contact Us</a><br><br>
-      <a class="about" href="">About</a>
-    </div> 
-    <br><br>
-        <h4>Follow Us<br><br>
+    <div class="cover">
+      <div class="about">
+        <h2>Get In Touch</h2>
+        <a class="contact" href="">contact Us</a><br><br>
+        <a class="about" href="">About</a>
+      </div> 
+      <div class="follow">
+        <h2>Follow Us</h2>
           <a class="facebook" href="https://www.facebook.com/TUTCommunications">Facebook</a><br><br>
           <a class="twitter" href="https://twitter.com/official_tut">Twitter</a><br><br>
-          <a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a><br><br>
-        </h4>
+          <a class="youtube" href="https://www.youtube.com/channel/UCD4jxDpRYTarILQjtsEQv9Q?view_as=subscriber">Youtube</a>
+      </div>
+    </div>
         <hr>
-        <p>&copy; 2021 TUT - ALL RIGHTS RESERVED</p>
-        <p id="privacy"><a href=""></a></p>
+        <p>&copy; 2021 TUT - ALL RIGHTS RESERVED<span><a href="https://www.tut.ac.za/other/disclaimers/terms-and-conditions"><p id="privacy">Privacy Policy</p></a></span></p>
+        
         <br>
   </footer>
 </div> 

@@ -1,2 +1,115 @@
+h1 img{
+    background-repeat: no-repeat;
+    float: left;
+    position: inherit;
+    display: grid;
+    margin-top: 15px;
+    padding-right: 0px;
+    padding-left: 10px;
+    filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+    text-shadow: 2px 2px 4px #fbfbfb;
+  }
+  h1{
+    line-height: 500%;
+    background-color: black;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    color: white;
+  }
+ 
+ h1 nav{
+    float: right;
+    margin-top: 0px;
+    color: grey;
+    font-size: 18px;
+    list-style: none;
+  }
+  h2{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-align: center;
+color: white;
+}
+ .covid{
+   text-align: center;
+   border-radius: 50%;
+ }
+ .about{
+   text-align: center;
+   margin-bottom: 0px;
+ }
+ .cover{
+display: flex;
+align-content: center;
+justify-content: center;
+}
+.cover div{
+align-items: center;
+margin: 5px;
+padding: 70px;
 
+}
+ a{
+    color: white;
+    text-decoration: none;
+    padding: 5px 18px;
+    font-family: "Roboto", sans-serif;
+
+  }
+  nav a:hover{
+    border: 1px solid white;
+    color: red;
+  }
+  nav a{
+    border: 1px solid white;
+  }
+  nav a:active{
+    border: 1px solid white;
+  }
+#footer{
+ background-color: black;
+ background-size: cover;
+}
+#privacy{
+color:rgb(163, 163, 163);
+}
+p{
+font-family:monospace; 
+text-align: center;
+color: rgb(59, 52, 52);  
+}
+ .table{
+  
+  border-collapse: collapse;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+ .table thead tr{
+  background-color: rgb(155, 155, 113);
+  color: white;
+  font-weight: bold;
+}
+.table th,
+.table td{
+  padding: 12px 15px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.table tbody td{
+    text-align: center;
+}
+.table tbody tr{
+  border-bottom: 1px solid #dddddd;
+}
+.table tbody tr:nth-of-type(even){
+  background-color: #d3d3d3;
+}
+.table tbody tr:last-of-type(even){
+  border-bottom: 2px solid rgb(155, 155, 113);
+}
+hr{
+color: rgb(59, 52, 52);
+width: 50%; 
+}
   
