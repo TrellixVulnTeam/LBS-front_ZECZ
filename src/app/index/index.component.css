@@ -60,15 +60,11 @@ h1 img{
     text-decoration: none;
     padding: 5px 18px;
     font-family: "Roboto", sans-serif;
-    
-
   }
   nav a:hover{
+    font-family: "Roboto", sans-serif;
     border: 1px solid white;
     color: red;
-  }
-  nav a:active{
-    border: 1px solid white;
   }
  #footer{
   background-color: black;
