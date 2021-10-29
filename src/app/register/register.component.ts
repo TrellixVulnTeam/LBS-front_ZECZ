@@ -17,11 +17,13 @@ export class RegisterComponent {
   @Input()
   //variable to store the selected radio button
   answer = '';
+//variable for storing the results
+res: string;
 
+
+//submit Function
   onSubmit(data)
    {
-    
-
     //sweet Alerts pop up messages
     Swal.fire({
       title: 'Register New User?',
@@ -40,6 +42,8 @@ export class RegisterComponent {
               //Add the User to the Database
             this.http.post('http://localhost:3000/registration',data, {responseType:'text'})
             .subscribe((result)=>{
+              //storing the results inside this variable
+              this.res = result;
             console.warn("result",result)
             //On submit validation
             if(result == 'user registered sucessfully')
@@ -49,7 +53,7 @@ export class RegisterComponent {
                 '',
                 'success'
               )
-              
+
             }else{
               Swal.fire(
                 result,
@@ -57,12 +61,11 @@ export class RegisterComponent {
                 'warning'
               )
             }
-
-            
           })
-         //Navigate to the Login page 
+          
+          //Navigate to the Login  page
          this.router.navigate(['/login']);
-          console.warn(data);
+        
         }
         if(this.answer == 'lecturer')
         {

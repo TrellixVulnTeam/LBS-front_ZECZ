@@ -131,8 +131,5 @@ h1 img{
         z-index: -1;
         filter: overlay;
         -webkit-filter: blur();
-        -webkit-backface-visibility: hidden;
-        -webkit-perspective: 1000;
-         -webkit-transform: translate3d(0,0,0);
      
       }
