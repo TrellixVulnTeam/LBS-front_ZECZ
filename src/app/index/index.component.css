@@ -24,11 +24,11 @@ h1 img{
     font-size: 18px;
     list-style: none;
   }
- h2{
-   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   text-align: center;
-   color: white;
- }
+  #heading{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: white;
+}
  .covid{
    text-align: center;
    border-radius: 50%;
@@ -51,7 +51,6 @@ h1 img{
 }
 .cover div{
  align-items: center;
- margin: 5px;
  padding: 70px;
  
 }

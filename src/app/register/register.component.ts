@@ -62,7 +62,7 @@ res: string;
               )
             }
           })
-          
+    
           //Navigate to the Login  page
          this.router.navigate(['/login']);
         
