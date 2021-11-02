@@ -1,1 +1,134 @@
 /**Login stylesheet**/
+h1 img{
+    background-repeat: no-repeat;
+    float: left;
+    position: inherit;
+    display: grid;
+    margin-top: 15px;
+    padding-right: 0px;
+    padding-left: 10px;
+    filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+    text-shadow: 2px 2px 4px #fbfbfb;
+  }
+  h1{
+    line-height: 500%;
+    background-color: black;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    color: white;
+  }
+ 
+ h1 nav{
+    float: right;
+    margin-top: 0px;
+    color: grey;
+    font-size: 18px;
+    list-style: none;
+  }
+  h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: white;
+}
+  h3{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    color: rgb(216, 126, 126);
+  }
+  .covid{
+    text-align: center;
+    border-radius: 50%;
+  }
+  .cover{
+ display: flex;
+ align-content: center;
+ justify-content: center;
+ }
+ .cover div{
+ align-items: center;
+ padding: 70px;
+ 
+ }
+ .container{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+ }
+ .background{
+  background-color:rgb(153, 153, 153);
+  border-radius: 12px;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  width: 400px;
+ }
+  a{
+    color: white;
+    text-decoration: none;
+    padding: 5px 18px;
+    font-family: "Roboto", sans-serif;
+
+  }
+  nav a:hover{
+    border: 1px solid white;
+    color: red;
+  }
+  nav a:active{
+    border: 1px solid white;
+  }
+  #footer{
+    background-color: black;
+    background-size: cover;
+   }
+   #privacy{
+   color:rgb(163, 163, 163);
+   }
+   p{
+   font-family:monospace; 
+   text-align: center;
+   color: rgb(59, 52, 52);  
+   }
+  #login_btn{
+   font-family: monospace;
+    border-radius: 15px;
+    padding: 8px 13px 8px 13px;
+    color: black;
+    background-color: white;
+  }
+  #login_btn:hover{
+    background-color: black;
+    color: white;
+  }
+  #forgotpass{
+    color: rgb(71, 71, 243);
+  }
+  form{
+    border-top: 1px;
+    border-style: solid grey 0.5px;
+    border-radius: 12px;
+  }
+  form label{
+    color: black;
+    font-family: fantasy;
+  }
+  form input{
+    border-bottom: 2px solid black;
+    border-radius: 12px;
+    padding: 5px;
+  }
+  hr{
+    color: rgb(59, 52, 52);
+    width: 50%; 
+    }
+    section{
+        background-image: url(../../assets/images/background3.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
+        margin-top: 0px;
+        z-index: -1;
+        filter: overlay;
+        -webkit-filter: blur();
+     
+      }
