@@ -91,6 +91,9 @@ h3{
        color:white;
        background-color: black;
    }
+   #delete{
+       color: red;
+   }
    .table{
     
     border-collapse: collapse;

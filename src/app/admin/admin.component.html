@@ -18,7 +18,7 @@
       <thead>
         <th>Notification Date</th>&nbsp;
         <th>Notification Message</th>&nbsp;
-        
+        <th>Remove Notification</th>
         
       </thead>
       
@@ -26,7 +26,6 @@
         <tr *ngFor="let notifications of notification; let j = index">           
           <td><span>{{notifications.Notification_Date.substr(0,10)}}</span></td>&nbsp; 
           <td><span>{{notifications.Notification}}</span></td>&nbsp;
-         
           <td><a  id="delete" type= "submit" name="Notification"  (click)="delete(notifications.Notification_ID)"  >Remove Notification</a> </td>
         
         </tr>
