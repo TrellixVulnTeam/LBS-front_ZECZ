@@ -1,0 +1,173 @@
+  
+  h1 img{
+    background-repeat: no-repeat;
+    float: left;
+    position: inherit;
+    display: grid;
+    margin-top: 15px;
+    padding-right: 0px;
+    padding-left: 10px;
+    filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+    text-shadow: 2px 2px 4px #fbfbfb;
+  }
+ h1{
+   line-height: 500%;
+   background-color: black;
+   font-family: 'Arial Narrow Bold', sans-serif;
+   font-weight: 100px;
+   color: white;
+   overflow: fixed;
+   margin-top: 15px;
+ }
+
+nav{
+   float: right;
+   list-style: none;
+   font-size: 16px;
+   margin-right: 10px;
+ }
+    h4{
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+    .container{
+        margin-left: 170px;
+        margin-right: 170px;
+      }
+    .covid{
+      text-align: center;
+      border-radius: 50%;
+    }
+    .about{
+      text-align: center;
+      margin-bottom: 0px;
+    }
+    a{
+      color: white;
+      text-decoration: none;
+      padding: 0px;
+      margin-top: 0px;
+      font-family: "Roboto", sans-serif;
+  
+    }
+    nav a{
+     padding: 6px;
+      
+    }
+    nav a:hover{
+      border: 1px solid white;
+      color: red;
+    }
+    nav a:active{
+      border: 1px solid white;
+    }
+
+    #btn{
+      font-family: "Roboto", sans-serif;
+      border-radius: 15px;
+      padding: 5px 7px 5px 7px;
+      color: orangered;
+      background-color: white;
+    }
+    #btn:hover{
+      background-color: black;
+      color: white;
+    }
+    #heading{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        color: white;
+     }
+     #learnMore{
+        color: rgb(77, 183, 197);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       }
+    section{
+        background-image: url(../../assets/images/background3.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
+        margin-top: 0px;
+        z-index: -1;
+        filter: overlay;
+        -webkit-filter: blur();
+     
+      }
+      #footer{
+        background-color: black;
+        background-size: cover;
+       }
+       #privacy{
+       color:rgb(163, 163, 163);
+       }
+       .cover{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        }
+        .cover div{
+        align-items: center;
+        padding: 70px;
+        
+        }
+       p{
+       font-family:monospace; 
+       text-align: center;
+       color: rgb(59, 52, 52);  
+       }
+       hr{
+        color: rgb(59, 52, 52);
+        width: 50%; 
+        }
+        #book{
+            margin-left: 100px;
+            font-family:fantasy;
+            color: rgb(247, 247, 247);
+            font-size: 3em;
+            font-weight: 100%;
+            animation:reverse;
+           }
+        #book {
+            overflow:hidden;
+            padding: 20px;
+            white-space:nowrap;
+           }
+           #book:first-of-type {    /* For increasing performance 
+                                 ID/Class should've been used. 
+                                 For a small demo 
+                                 it's okaish for now */
+            animation: showup 7s infinite;
+           }
+           
+           #book:last-of-type {
+            width:0px;
+            animation: reveal 7s infinite;
+           }
+           #book2:last-of-type {
+            color: rgb(172, 102, 102);
+            animation: slidein 7s infinite;
+           }
+           
+           @keyframes showup {
+              0% {opacity:0;}
+              20% {opacity:1;}
+              80% {opacity:1;}
+              100% {opacity:0;}
+           }
+           
+           @keyframes slidein {
+              0% { margin-left:-800px; }
+              20% { margin-left:-800px; }
+              35% { margin-left: 50px; }
+              100% { margin-left: -20px; }
+           }
+           
+           @keyframes reveal {
+              0% {opacity:0;width:0px;}
+              20% {opacity:1;width:0px;}
+              30% {width:800px;}
+              80% {opacity:1;}
+              100% {opacity:0;width:800px;}
+           }

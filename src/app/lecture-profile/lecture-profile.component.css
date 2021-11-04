@@ -1,0 +1,155 @@
+h1 img{
+    background-repeat: no-repeat;
+    float: left;
+    position: inherit;
+    display: grid;
+    margin-top: 15px;
+    padding-right: 0px;
+    padding-left: 10px;
+    filter: drop-shadow(0 0 0.75rem rgb(248, 248, 247));
+    text-shadow: 2px 2px 4px #fbfbfb;
+  }
+ h1{
+   line-height: 500%;
+   background-color: black;
+   font-family: 'Arial Narrow Bold', sans-serif;
+   font-weight: 100px;
+   color: white;
+   overflow: fixed;
+   margin-top: 15px;
+ }
+
+nav{
+   float: right;
+   list-style: none;
+   font-size: 16px;
+   margin-right: 10px;
+ }
+  h4{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 0px;
+    font-size: 1em;
+  }
+
+  .covid{
+    text-align: center;
+    border-radius: 50%;
+  }
+  .about{
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  
+  a{
+    color: white;
+    text-decoration: none;
+    padding: 0px;
+    margin-top: 0px;
+    font-family: "Roboto", sans-serif;
+
+  }
+  nav a{
+    height: 100px;
+    padding: 6px;
+    
+  }
+  nav a:hover{
+    border: 1px solid white;
+    color: red;
+  }
+  nav a:active{
+    border: 1px solid white;
+  }
+  #btn{
+    font-family: "Roboto", sans-serif;
+    border-radius: 15px;
+    padding: 7px 10px 7px 10px;
+    color: orangered;
+    background-color: white;
+  }
+  #btn:hover{
+    background-color: black;
+    color: white;
+  }
+  p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+    
+  }
+  form{
+    border-top: 1px;
+    border-style: solid grey 0.5px;
+    
+  }
+  form input{
+    border-bottom: 2px solid black;
+    border-radius: 12px;
+    padding: 5px;
+  }
+  #profile{
+    border-radius: 12px;
+  }
+  h2{
+    color: rgb(124, 122, 122);
+  }
+  .container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  .container div{
+   background-color:burlywood;
+   align-items: center;
+   margin: 20px;
+   padding: 20px;
+   padding-left: 130px;
+   width: 350px;
+  }
+  .info{
+    font-family: -apple-system, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .password{
+   border-radius: 12px;
+  }
+  .names{
+   border-radius: 12px;
+  }
+  form input{
+    border-bottom: 2px solid black;
+    border-radius: 12px;
+    padding: 5px;
+  }
+
+  #heading{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: white;
+}
+#footer{
+  background-color: black;
+  background-size: cover;
+ }
+ #privacy{
+ color:rgb(163, 163, 163);
+ }
+ .cover{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  }
+  .cover div{
+  align-items: center;
+  padding: 70px;
+  
+  }
+ p{
+ font-family:monospace; 
+ text-align: center;
+ color: rgb(59, 52, 52);  
+ }
+ hr{
+  color: rgb(59, 52, 52);
+  width: 50%; 
+  }
