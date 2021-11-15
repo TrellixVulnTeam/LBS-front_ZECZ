@@ -16,27 +16,36 @@
  <!--Search bar-->
 
 
-    <table class="table" align="center">
-      <thead>
-      <tr>
-        <th>User ID</th>&nbsp;
-        <th>Booking ID</th>&nbsp;
-        <th>Lab Name</th>&nbsp;
-        <th>Lab Slot</th>&nbsp;
-        <th>Date</th>&nbsp;   
-      </tr>
-      </thead>
 
-      <tbody>
-      <tr *ngFor="let bookings of view">
-        <td><span>{{bookings.User_ID}}</span></td>&nbsp;
-        <td><span>{{bookings.Booking_ID}}</span></td>&nbsp;
-        <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
-        <td><span>{{bookings.Lab_Slot}}</span></td>&nbsp;
-        <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
-      </tr>
-      </tbody>
-    </table>
+    <br><br>
+    <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
+
+
+      <table class="table" align="center">
+        <thead>
+        <tr>
+          <th>User ID</th>&nbsp;
+          <th>Booking ID</th>&nbsp;
+          <th>Lab Name</th>&nbsp;
+          <th>Lab Slot</th>&nbsp;
+          <th>Date</th>&nbsp;   
+        </tr>
+        </thead>
+  
+        <tbody>
+        <tr *ngFor="let bookings of view">
+          <td><span>{{bookings.User_ID}}</span></td>&nbsp;
+          <td><span>{{bookings.Booking_ID}}</span></td>&nbsp;
+          <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
+          <td><span>{{bookings.Lab_Slot}}</span></td>&nbsp;
+          <td><span>{{bookings.date.substr(0,10)}}</span></td>&nbsp;
+        </tr>
+        </tbody>
+        
+      </table>
+      <button  style="text-align: center;" type="submit" >Download CSV File</button>
+   
+   </form>
     <br><br><br><br>
     <br><br><br><br>
 

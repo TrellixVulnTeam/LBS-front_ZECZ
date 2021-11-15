@@ -3,6 +3,7 @@ import { LoginComponent } from '../login/login.component';
 import { Router, NavigationExtras} from '@angular/router';
 import { HttpClient } from '@angular/common/http'; 
 import Swal from 'sweetalert2';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 export class bookings {
   constructor(
@@ -49,14 +50,13 @@ export class ViewBookingsComponent implements OnInit {
  //variable that store the number of booking
  Num_Bookings: string;
 
+
+
   ngOnInit(): void {
     this.tittle = localStorage.getItem("token");
     this.getDetails();
   }
-  sendData(event: any)
-  {
-    console.log(event.target.value);
-  }
+ 
 
     //get Detail funtion that store the data from local storage to the detail array
     //and connects to booking API
@@ -70,24 +70,28 @@ export class ViewBookingsComponent implements OnInit {
         
     }
 
+
+   
     //on submit function that calls the booking detail API
     onSubmit(data){
-      //Retrieve information from the database
-      this.http.post('http://localhost:3000/bookings',data,{responseType:'text'})
-      .subscribe((result) =>{
-        this.view= JSON.parse(result);
-        console.warn("Results", result);
-        //this.booking = result;
-      });
-      //API for number of bookings
-      this.http.post('http://localhost:3000/bookingsNum',data,{responseType:'text'})
-      .subscribe((result) =>{
-        //this.Num_Bookings = JSON.stringify(result);
-        this.Num_Bookings = result;
-        console.log(this.Num_Bookings);
-      });
-      console.warn(data);
+      
+
+      var options = { 
+        fieldSeparator: ',',
+        quoteStrings: '"',
+        decimalseparator: '.',
+        showLabels: true, 
+        showTitle: false,
+        title: 'Bookings',
+        useBom: true,
+        headers: ["Booking_ID", "Lab_Name", "Lab_Slot", "User_ID", "Num_Bookings","Date"]
+      };
+     
+      new ngxCsv(this.view, "records", options);
+     
     }
+
+   
 
 
     //On click function for logout
@@ -97,5 +101,8 @@ export class ViewBookingsComponent implements OnInit {
         localStorage.removeItem("token");
         this.router.navigate(['/index']);
       }
+
+
+    
 
 }

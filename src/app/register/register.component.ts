@@ -53,18 +53,21 @@ res: string;
                 '',
                 'success'
               )
+            
 
             }else{
               Swal.fire(
                 result,
                 '',
                 'warning'
+
               )
+              
             }
           })
     
           //Navigate to the Login  page
-         this.router.navigate(['/login']);
+          
         
         }
         if(this.answer == 'lecturer')
@@ -93,7 +96,7 @@ res: string;
               
             })
             //Navigate to the Login  page
-            this.router.navigate(['/login']);
+            
             console.warn(data);
         }
         //check if the radio button is clicked
@@ -105,7 +108,8 @@ res: string;
             'error'
           )
         }
-        
+
+        this.router.navigate(['/login']);
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelled',
