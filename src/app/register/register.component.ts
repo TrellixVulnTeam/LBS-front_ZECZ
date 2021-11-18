@@ -109,7 +109,7 @@ res: string;
           )
         }
 
-        this.router.navigate(['/login']);
+        
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelled',

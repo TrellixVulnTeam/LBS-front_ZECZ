@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 export class ForgotPasswordComponent implements OnInit {
 
   constructor(private router: Router, private http:HttpClient) { }
-
+//variable to store the selected radio button
+answer = '';
   ngOnInit(): void {
   }
   onSubmit(data) {
@@ -32,9 +33,11 @@ export class ForgotPasswordComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        //Add the User to the Database
-        this.http.post('http://localhost:3000/forgotPassword',data,{responseType: 'text'})
-        .subscribe((result)=>{
+        //Send data to the API if the selected radio button is for the student
+        if(this.answer == 'student')
+        {
+          this.http.post('http://localhost:3000/forgotPassword',data,{responseType: 'text'})
+          .subscribe((result)=>{
             console.warn("result",result)
             if(result == 'student number does not exist please create an account or contact admin' || result == 'please enter student number' )
             {
@@ -54,10 +57,49 @@ export class ForgotPasswordComponent implements OnInit {
               this.router.navigate(['/login']);
             }
             
-        })
-        console.warn(data);
+          })
 
+        }
         
+
+        //Send data to the API if the selected radio button is for the Lecturer
+        if(this.answer == 'lecturer')
+        {
+          this.http.post('http://localhost:3000/lecturerPassword',data,{responseType: 'text'})
+          .subscribe((result)=>{
+            console.warn("result",result)
+            if(result == 'Lecturer number does not exist please create an account or contact admin' || result == 'please enter student number' )
+            {
+              Swal.fire(
+                result,
+                '',
+                'warning'
+              )
+            }else{
+              
+              Swal.fire(
+                'Your password has been sent!',
+                '',
+                'success'
+              )
+              //Navigate to the Login page
+              this.router.navigate(['/login']);
+            }
+            
+          })
+
+        }
+        
+
+        //check if the radio button is clicked
+        if(this.answer == "")
+        {
+          Swal.fire(
+            'Please select Radio Button',
+            '',
+            'error'
+          )
+        }
         
       
       } else if (result.dismiss === Swal.DismissReason.cancel) {
