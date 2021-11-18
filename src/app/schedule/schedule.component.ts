@@ -44,7 +44,7 @@ export class ScheduleComponent implements OnInit {
   }
 
   //variable to handle the radio button
-  answer: string;
+  answer = '';
   //variable that holds the selected lab
   selectedLab:string = ""
   //variable that holds the selected slot
@@ -129,16 +129,15 @@ export class ScheduleComponent implements OnInit {
                 })
                 console.warn(data);
             }
-
-        //check if the radio button is clicked
-        if(this.answer == "")
-        {
-          Swal.fire(
-            'Please select Radio Button',
-            '',
-            'error'
-          )
-        }
+            //check if the radio button is clicked
+            if(this.answer === "")
+            {
+              Swal.fire(
+                'Please select Radio Button',
+                '',
+                'error'
+              )
+            }
             
           } else if (result.dismiss === Swal.DismissReason.cancel) {
             Swal.fire(
