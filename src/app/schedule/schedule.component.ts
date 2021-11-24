@@ -133,7 +133,7 @@ export class ScheduleComponent implements OnInit {
             if(this.answer === "")
             {
               Swal.fire(
-                'Please select Radio Button',
+                'Choose whether to publish a lab for Students or Lecturers',
                 '',
                 'error'
               )

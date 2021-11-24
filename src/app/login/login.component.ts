@@ -160,7 +160,7 @@ export class LoginComponent implements OnInit {
     //check if the radio button is clicked
     if (this.answer == "") {
       Swal.fire(
-        'Select Radio Button',
+        'Select your Role as a Student, Lecturer, or Admin',
         '',
         'error'
       )

@@ -18,7 +18,7 @@ export class RegisterComponent {
   //variable to store the selected radio button
   answer = '';
 //variable for storing the results
-res: string;
+res = '';
 
 
 //submit Function
@@ -48,12 +48,15 @@ res: string;
             //On submit validation
             if(result == 'user registered sucessfully')
             {
+              //Routing
+              this.router.navigate(['/login']);
+
               Swal.fire(
                 result,
                 '',
                 'success'
               )
-            
+              
 
             }else{
               Swal.fire(
@@ -65,8 +68,6 @@ res: string;
               
             }
           })
-    
-          //Navigate to the Login  page
           
         
         }
@@ -76,9 +77,13 @@ res: string;
               this.http.post('http://localhost:3000/Lec_registration',data, {responseType:'text'})
               .subscribe((result)=>{
               console.warn("result",result)
+              this.res = result;
               //On submit validation
               if(result == 'user registered sucessfully')
               {
+                //Routing
+                this.router.navigate(['/login']);
+
                 Swal.fire(
                   result,
                   '',
@@ -93,22 +98,18 @@ res: string;
                 )
               }
   
-              
             })
-            //Navigate to the Login  page
-            
             console.warn(data);
         }
         //check if the radio button is clicked
         if(this.answer == "")
         {
           Swal.fire(
-            'Please select Radio Button',
+            'Select your Role as a Student or Lecturer',
             '',
             'error'
           )
         }
-
         
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
@@ -118,6 +119,18 @@ res: string;
         )
       }
     })
+        //Router to login if successful
+        if(this.res == '')
+        {
+          //Remain on registration page
+          this.router.navigate(['/registration']);
+          console.warn(this.res);
+        }else{
+          //Navigate to the Login  page
+          this.router.navigate(['/login']);
+          console.warn(this.res);
+        }
+        console.warn(this.res);
   }
 
 }

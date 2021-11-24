@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgImageSliderModule } from 'ng-image-slider';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 //import service class
 import { IssueService } from './issue.service';
@@ -60,6 +61,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     ReactiveFormsModule,
     FormsModule,
     NgImageSliderModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },

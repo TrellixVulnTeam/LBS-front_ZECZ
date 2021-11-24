@@ -85,13 +85,20 @@ export class BookingDetailsComponent implements OnInit {
         
     }
 
-    onDelete(data){    
-      
+    onDelete(data){ 
+      //converting student number to object   
+        this.detail = JSON.parse(this.tittle);
+        this.stuNumber = JSON.parse(this.detail[0].stud_no);
+        
+        var st = JSON.stringify(this.stuNumber);
+        console.log(st);
 
-      var jsonPerson = '{"bookingID":'+ data +'}';
+      var jsonPerson = '{"bookingID":'+ st +'}';
       var personObject = JSON.parse(jsonPerson);
-  
-      console.log(data)
+
+      console.log(personObject);
+
+
       Swal.fire({
         title: 'Are you sure you want to cancel this booking',
         text: '',
@@ -101,7 +108,7 @@ export class BookingDetailsComponent implements OnInit {
         cancelButtonText: 'NO'
       }).then((result) => {
         if (result.isConfirmed) {
-    
+  
           //Add the User to the Database
           this.http.post('http://localhost:3000/cancelBooking',personObject,{responseType: 'text'})
           .subscribe((result)=>{
@@ -124,7 +131,7 @@ export class BookingDetailsComponent implements OnInit {
               }
               
           })
-          console.warn(data);
+          //console.warn(data);
     
           
           

@@ -59,31 +59,31 @@ export class HomeComponent implements OnInit {
   //image slider
   imageObject: Array<object> = [
     {
-      thumbImage:'assets/images/lab3.jpg',
+      thumbImage:'assets/images/TUT1.JPG',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/lab6.jpeg',
+      thumbImage: 'assets/images/TUT3.JPG',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/lab2.jpg',
+      thumbImage: 'assets/images/TUT4.JPG',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/lab7.jpg',
+      thumbImage: 'assets/images/TUT8.jpg',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/lab1.jpg',
+      thumbImage: 'assets/images/TUT5.JPG',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/lab4.jpg',
+      thumbImage: 'assets/images/TUT2.JPG',
       text:'Lab booking system group'
     },
     {
-      thumbImage: 'assets/images/lab5.jpg',
+      thumbImage: 'assets/images/TUT6.JPG',
       text:'Lab booking system group'
     },
   ]

@@ -95,7 +95,7 @@ answer = '';
         if(this.answer == "")
         {
           Swal.fire(
-            'Please select Radio Button',
+            'Select your Role as a Student or Lecturer',
             '',
             'error'
           )

@@ -1,5 +1,5 @@
 
-
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { Router, NavigationExtras} from '@angular/router';
@@ -62,11 +62,17 @@ export class ViewScheduleComponent implements OnInit {
  stuNumber: number;
  //variable that store the number of booking
  Num_Bookings: string;
+ //Pagination
+ totalLength:any;
+  page: number = 1;
+  page2: number = 2;
+  page3: number = 3;
 
   ngOnInit(): void {
     this.tittle = localStorage.getItem("token");
     this.getDetails();
   }
+
   sendData(event: any)
   {
     console.log(event.target.value);
@@ -79,6 +85,7 @@ export class ViewScheduleComponent implements OnInit {
     .subscribe(response => {
 
       this.view = response;
+      this.totalLength = response.length;
       console.log(response);
     })
         

@@ -36,7 +36,10 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let Schedule of view; let j = index">
+      <tr *ngFor="let Schedule of view; let j = index; 
+        paginate: {itemsPerPage: 8, 
+        currentPage: page,
+        totalItems: totalLength }">
         <td><span>{{Schedule.Lab_ID}}</span></td>&nbsp;
         <td><span>{{Schedule.Lab_Name}}</span></td>&nbsp;
         <td><span>{{Schedule.Lab_Slot}}</span></td>&nbsp;
@@ -52,8 +55,13 @@
         <td><span></span></td>&nbsp;
         
       </tr>
+      <tr>
+        <pagination-controls (pageChange)="page = $event" pagination-id= "page"></pagination-controls>
+      </tr>
+      
       </tbody>
     </table>
+    
     <br><br><br><br>
     <div id="footer">
       <footer >

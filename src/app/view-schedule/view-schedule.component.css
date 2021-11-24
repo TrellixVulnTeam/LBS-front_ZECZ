@@ -97,6 +97,7 @@ h2{
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   }
+  
   .table thead tr{
     background-color: rgb(155, 155, 113);
     color: white;

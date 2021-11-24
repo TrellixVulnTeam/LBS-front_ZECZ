@@ -89,8 +89,15 @@ export class LectureBookingDetailsComponent  implements OnInit {
     onDelete(data){    
       
 
-      var jsonPerson = '{"bookingID":'+ data +'}';
-      var personObject = JSON.parse(jsonPerson);
+      //converting student number to object   
+      this.detail = JSON.parse(this.tittle);
+      this.stuNumber = JSON.parse(this.detail[0].lec_id);
+      
+      var st = JSON.stringify(this.stuNumber)
+
+    var jsonPerson = '{"bookingID":'+ st +'}';
+    var personObject = JSON.parse(jsonPerson);
+
   
       console.log(data)
       Swal.fire({
