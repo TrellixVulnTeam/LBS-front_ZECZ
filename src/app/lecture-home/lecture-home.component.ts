@@ -53,38 +53,35 @@ export class LectureHomeComponent implements OnInit {
     this.router.navigate(['/index']);
   }
 
-  //image slider
-  imageObject: Array<object> = [
-    {
-      thumbImage:'assets/images/lab3.jpg',
-      text:'Lab booking system group'
-    },
-    {
-      thumbImage: 'assets/images/lab6.jpeg',
-      text:'Lab booking system group'
-    },
-    {
-      thumbImage: 'assets/images/lab2.jpg',
-      text:'Lab booking system group'
-    },
-    {
-      thumbImage: 'assets/images/lab7.jpg',
-      text:'Lab booking system group'
-    },
-    {
-      thumbImage: 'assets/images/lab1.jpg',
-      text:'Lab booking system group'
-    },
-    {
-      thumbImage: 'assets/images/lab4.jpg',
-      text:'Lab booking system group'
-    },
-    {
-      thumbImage: 'assets/images/lab5.jpg',
-      text:'Lab booking system group'
-    },
-  ]
+ //image slider
+ imageObject: Array<object> = [
+  {
+    thumbImage:'assets/images/TUT1.JPG',
+    text:'Lab booking system group'
+  },
+  {
+    thumbImage: 'assets/images/TUT3.JPG',
+    text:'Lab booking system group'
+  },
+  {
+    thumbImage: 'assets/images/TUT4.JPG',
+    text:'Lab booking system group'
+  },
+  {
+    thumbImage: 'assets/images/TUT8.jpg',
+    text:'Lab booking system group'
+  },
+  {
+    thumbImage: 'assets/images/TUT5.JPG',
+    text:'Lab booking system group'
+  },
+  {
+    thumbImage: 'assets/images/TUT2.JPG',
+    text:'Lab booking system group'
+  },
+  {
+    thumbImage: 'assets/images/TUT6.JPG',
+    text:'Lab booking system group'
+  },
+]
 }
-
-
-
