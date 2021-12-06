@@ -5,6 +5,8 @@ import { LoginComponent } from '../login/login.component';
 import { Router, NavigationExtras} from '@angular/router';
 import { HttpClient } from '@angular/common/http'; 
 import Swal from 'sweetalert2';
+import { EMPTY } from 'rxjs';
+import { isEmpty } from 'rxjs/operators';
 
 
 
@@ -68,10 +70,45 @@ export class ViewScheduleComponent implements OnInit {
   page2: number = 2;
   page3: number = 3;
 
+//variable for search
+date:string;
+date2 :string;
+
+
+
+
+
   ngOnInit(): void {
     this.tittle = localStorage.getItem("token");
     this.getDetails();
+    
+  
   }
+
+      // function for search
+ Search(){
+
+  
+  if(this.date.length > 9){
+    this.view = this.view.filter(res=>{
+      return JSON.stringify(res.Lab_Date.substr(0,10)).toLocaleLowerCase().match(JSON.stringify(this.date).toLocaleLowerCase())
+    })
+    }
+    else{
+      this.http.get<any>('http://localhost:3000/view-schedule')
+      .subscribe(response => {
+    
+        this.view = response;
+        this.totalLength = response.length;
+        console.log(response);
+        
+      }) 
+      
+    
+    }
+     
+ 
+}
 
   sendData(event: any)
   {
@@ -93,6 +130,8 @@ export class ViewScheduleComponent implements OnInit {
 
     //on submit function that calls the booking detail API
     onSubmit(data){
+
+    
       
     }
    
