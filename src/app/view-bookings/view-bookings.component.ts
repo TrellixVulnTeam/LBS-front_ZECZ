@@ -11,7 +11,7 @@ export class bookings {
     public Lab_Name: string,
     public Lab_Slot: string,
     public Num_Bookings: string,
-    public User_ID: string,
+    public User_ID: number,
     public date: string,
    
   ) {
@@ -43,18 +43,22 @@ export class ViewBookingsComponent implements OnInit {
   tittle: string;
   //array to store the data from the database
   view:bookings[];
+  bookings: bookings[];
  //array to store the data from the localstorage
  detail: Details[];
  //variable to store the student Number
  stuNumber: number;
  //variable that store the number of booking
  Num_Bookings: string;
+ //variable for search
+ Booking:number;
 
 
 
   ngOnInit(): void {
     this.tittle = localStorage.getItem("token");
     this.getDetails();
+  
   }
  
 
@@ -70,7 +74,23 @@ export class ViewBookingsComponent implements OnInit {
         
     }
 
+     // function for search
+ Search(){
+  
+  if(this.Booking > 0){
+  this.view = this.view.filter(res=>{
+    return JSON.stringify(res.Booking_ID).toLocaleLowerCase().match(JSON.stringify(this.Booking).toLocaleLowerCase())
+  })
+}else{
+  this.http.get<any>('http://localhost:3000/bookings')
+  .subscribe(response => {
 
+    this.view = response;
+    console.log(response);
+  })
+
+}
+ }
    
     //on submit function that calls the booking detail API
     onSubmit(data){
@@ -91,7 +111,7 @@ export class ViewBookingsComponent implements OnInit {
      
     }
 
-   
+  
 
 
     //On click function for logout

@@ -18,10 +18,14 @@
 
 
     <br><br>
+    <p>Search by Booking ID <input type="number" #myInput [(ngModel)]="Booking" (input)="Search()" /> </p> 
+  
+    <br>
+
     <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" style="text-align: center;">
-
-
-      <table class="table" align="center">
+      
+   
+      <table class="table" align="center" >
         <thead>
         <tr>
           <th>User ID</th>&nbsp;
@@ -33,7 +37,9 @@
         </thead>
   
         <tbody>
-        <tr *ngFor="let bookings of view">
+       
+      
+        <tr *ngFor="let bookings of view ">
           <td><span>{{bookings.User_ID}}</span></td>&nbsp;
           <td><span>{{bookings.Booking_ID}}</span></td>&nbsp;
           <td><span>{{bookings.Lab_Name}}</span></td>&nbsp;
@@ -42,6 +48,7 @@
         </tr>
         </tbody>
         
+    
       </table>
       <br>
       <button  style="text-align: center;" type="submit" >Download CSV File</button>
