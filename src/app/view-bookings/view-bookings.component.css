@@ -60,6 +60,16 @@ h2{
  nav a:active{
    border: 1px solid white;
  }
+ #download{
+  border-radius: 4px;
+  padding: 5px 7px 5px 7px;
+  background-color: rgb(123, 194, 251);
+  color: rgb(0, 0, 0);
+}
+#download:hover{
+  color:white;
+  background-color: black;
+}
  #btn{
    font-family: "Roboto", sans-serif;
    border-radius: 15px;

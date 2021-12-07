@@ -4,10 +4,11 @@ import { IssueService } from '../issue.service';
 import { Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http'; 
 import Swal from 'sweetalert2';
-import { GroupedObservable } from 'rxjs';
-import { __values } from 'tslib';
+import { BehaviorSubject, GroupedObservable, Observable } from 'rxjs';
+import { __asyncValues, __values } from 'tslib';
 import { FormsModule } from '@angular/forms';
 import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import {switchMap} from 'rxjs/operators';
 
 export class notifications {
   constructor(
@@ -30,6 +31,7 @@ export class notifications {
 
 
 export class AdminComponent implements OnInit {
+  static getNotifications: any;
 
   constructor(private http:HttpClient,private router: Router) { }
 
@@ -37,10 +39,13 @@ export class AdminComponent implements OnInit {
 //array to store notifications
 notification: notifications[];
 
-
+//auto Refresh variable
+refreshUsers$ = new BehaviorSubject<boolean>(true);
+//notification variable
+notice$: Observable<Array<{notice: string}>>
 
   ngOnInit(): void {
-    this.getNotifications()
+   this.getNotifications()
   }
 
 
@@ -51,7 +56,7 @@ notification: notifications[];
        
         
         this.notification = response;
-     
+        this.refreshUsers$.next(true);
         console.log(response);
       }
     );
